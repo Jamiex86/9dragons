@@ -1,0 +1,160 @@
+/****************************************************
+지금 방식으로는.. 
+간간히 원래틱으로 재세팅하는식으로 방지시킬수있습니다 
+깔끔한 모양은 아니죠; 
+예전 테스트할때 타이머 읽는 루틴은 실패해서-_-... 
+타이머 읽기만 되면; 현재 클럭 살피면 간단히 해결이 되는데... 
+좀더 분석해보면 답이 나올지도요; 
+
+아직 실전 테스트로 완벽하게 검증된 소스는 아니라; 
+부작용 발생의 여지가 있습니다; 혹시 사용하신후 문제 생기시거나; 
+더 좋은 방법 찾으시면; 
+제보 부탁~ 드립니다~
+******************************************************/
+
+#include <stdio.h> 
+#include <dos.h> 
+#include <conio.h> 
+
+chgTimerFreq(unsigned freq) 
+{                              
+         unsigned lowCount,highCount; 
+         unsigned long count; 
+
+         count = 1193280 / freq; 
+         lowCount = count % 256; 
+         highCount = count / 256; 
+
+         outportb(0x43,0x34); 
+         outportb(0x40,lowCount); 
+         outportb(0x40,highCount); 
+} 
+
+void testTimer() 
+{ 
+         int i;          
+
+         for(i=0;i<10;i++) { 
+                 gotoxy(1,3); 
+                 cprintf("SEC:%03d",i+1); 
+                 sleep(1); 
+         } 
+} 
+
+
+main() 
+{ 
+         clrscr(); 
+
+         printf("TEST -- Change Timer Frequence\n\n"); 
+                                         testTimer(); 
+         chgTimerFreq(170);  // 일초에 170번 걸리게 티이머 set 
+         testTimer(); 
+         getch(); 
+}
+
+// 스피드핵 만들기 & 막기 : 비엽(cronan) GPG 사이트에서 
+
+static inline void do_8253(void) 
+{ 
+    __asm 
+    { 
+        mov     al, 34h 
+        out     43h, al         ; _outp(0x43, 0x34); 
+        mov     ax, bx 
+        out     40h, al         ; _outp(0x40, low); 
+        mov     al, ah 
+        out     40h, al         ; _outp(0x40, high); 
+        _emit   0xCF          ; iret 
+    }; 
+} 
+
+
+static void __declspec(naked) Win98_8253(unsigned freq) 
+{ 
+    // prolog 
+    __asm 
+    { 
+        push    ebp 
+        mov     ebp, esp 
+        push    ebx 
+    }; 
+
+    __asm 
+    { 
+        push    ecx 
+        push    eax 
+        sidt    [esp-2] 
+        pop     eax 
+        mov     [ebp-4], eax 
+        mov     eax, [ebp-4] 
+        mov     ecx, offset do_8253 
+        mov     [ebp-4], ecx 
+        mov     dl, byte ptr [ebp-1] 
+        mov     [eax+28h], cl 
+        mov     cl, byte ptr [ebp-2] 
+        mov     [eax+29h], ch 
+        mov     [eax+2Eh], cl 
+        mov     [eax+2Fh], dl 
+        mov     ebx, [ebp+8] 
+        int     5 
+    }; 
+
+    // epilog 
+    __asm 
+    { 
+        pop     ebx 
+        mov     esp, ebp 
+        pop     ebp 
+        retn 
+    }; 
+}
+
+
+static void (*Outport) (unsigned short port, int data) = NULL; 
+... 
+Outport = (void (*)(unsigned short, int)) GetProcAddress(hNTPortModule, "Outport"); 
+... 
+
+static void __declspec(naked) NT_8253(unsigned freq) 
+{ 
+    // prolog 
+    __asm 
+    { 
+        push    ebp 
+        mov     ebp, esp 
+        push    ebx 
+    }; 
+
+    __asm 
+    { 
+        push 0x34 
+        push 0x43 
+        call Outport 
+
+        mov ebx, [ebp+8] 
+        mov al, bl 
+        and eax, 0xFF 
+        push eax 
+        push 0x40 
+        call Outport 
+
+        xor ecx, ecx 
+        mov cl, bh 
+        push ecx 
+        push 0x40 
+        call Outport 
+    }; 
+
+    // epilog 
+    __asm 
+    { 
+        pop     ebx 
+        mov     esp, ebp 
+        pop     ebp 
+        retn 
+    }; 
+}
+
+
+

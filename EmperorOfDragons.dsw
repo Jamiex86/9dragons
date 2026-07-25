@@ -1,0 +1,196 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "EmperorOfDragons"=.\EmperorOfDragons.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons", BAAAAAAA
+    .
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name XGamebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XKernel
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XFControl
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "NexonADBalloonLib"=.\NexonADBalloonLib\NexonADBalloonLib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/NexonADBalloonLib", GCAFAAAA
+    .\nexonadballoonlib
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "SetRegistry"=.\SetRegistry\SetRegistry.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/SetRegistry", BJEBAAAA
+    .\setregistry
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XFControl"=.\XFControl\XFControl.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XFControl", PLLDAAAA
+    .\xfcontrol
+    end source code control
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name XGamebase
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name XKernel
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "XFileTransfer"=.\XFileTransfer\XFileTransfer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XFileTransfer", YJEBAAAA
+    .\xfiletransfer
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XGamebase"=.\XGamebase\XGamebase.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XGamebase", VKEBAAAA
+    .\xgamebase
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XKernel"=.\XKernel\XKernel.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XKernel", NDEBAAAA
+    .\xkernel
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XLauncher"=.\XLauncher\XLauncher.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XLauncher", ISEBAAAA
+    .\xlauncher
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XPacker"=.\XPacker\XPacker.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XPacker", RVEBAAAA
+    .\xpacker
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "XPatch"=.\XPatch\XPatch.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons/XPatch", DYEBAAAA
+    .\xpatch
+    end source code control
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+    begin source code control
+    "$/EmperorOfDragons", BAAAAAAA
+    .
+    end source code control
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

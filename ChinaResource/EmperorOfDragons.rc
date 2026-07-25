@@ -1,0 +1,757 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "九龙争霸"
+    IDS_DISCRYPTION         "Programming by Park il jun <kerygma@netian.com>"
+    IDC_EMPEROROFDRAGONS    "EMPEROROFDRAGONS"
+    IDS_INITIALIZEGAME      "游戏初始化进展中。"
+    IDS_CONNECTLOGINSERVER  "注册服务器连接进展中。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIMEOUT_RETRY       "计时剩馀, 再试图为授权。"
+    IDS_CANNOTCONNECTELOGINSERVER "不能连接到授权服务器。"
+    IDS_REQUESTLOGINRESULT  "请求批准结果。"
+    IDS_TIMEOUT_RETRYREQUESTLOGINRESULT "计时剩馀, 再试图为授权的结果。"
+    IDS_CANNOTDOWNLOADLOGINRESULT "不能接受授权结果。"
+    IDS_CANNOTCONNECTEGAMESERVER "不能连接到游戏服务器。"
+    IDS_LOGINGAMESERVER_COUNTDOWNMESSAGE 
+                            "设法连接游戏服务器。这正在给在%d秒。"
+    IDS_LOGINGAMESERVER     "设法连接游戏服务器。"
+    IDS_CANCELCONNECT       "放弃连接。"
+    IDS_EMPTY_IDORPASSWORD  "输入是错误的, 在用户名或口令。"
+    IDS_CONNECTEDGAMESERVER "连接在游戏服务器里。"
+    IDS_CLOSEGAME           "放弃?"
+    IDS_TOOLTIP_LOGIN       "连接"
+    IDS_TOOLTIP_ENDGAME     "游戏终了"
+    IDS_FAILEDCREATECHARACTER "它无法创造新英雄。"
+    IDS_EMPTYCHARACTERSLOT  "不有被创造了的英雄。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NONECHAR            "无"
+    IDS_LEVELSTARSTRING     "等级"
+    IDS_CONFIRMDELETECHARACTER "消灭这个英雄? "
+    IDS_DELETINGCHARACTER   "消灭进展中。"
+    IDS_REMOVEDCHARACTER    "英雄消灭在成功。"
+    IDS_FAILEDSENDMESSAGETOSERVER "它无法对数据传输与服务器。"
+    IDS_LOGINFAIL_INVALIDID "不能批准这用户名。"
+    IDS_LOGINFAIL_ALREADYCONNECTED "这是已经被连接的用户名。"
+    IDS_LOGINFAIL_INVALIDPASSWORD "这个口令是不确切的。"
+    IDS_LOGINFAIL_UNKNOWNERROR "未知的错误发生从服务器边"
+    IDS_WSAASYNCERROR       "WSAAsyncSelect 失败。[_ECode:%d]"
+    IDS_FAILEDSOCKETCONNECT "Socket connect 失败。[_ECode:%d]"
+    IDS_FAILEDRECIEVEPACKET "数据接受失败。[_ECode:%d]"
+    IDS_DISCONNECTEDLOGINSERVER "与授权服务器的连接打破了。[_ECode:%d]"
+    IDS_DISCONNECTEDGAMESERVER "与游戏服务器的连接打破了。[_ECode:%d]"
+    IDS_ADMINCLOSEGAME      "放弃游戏。谢谢戏剧。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CLOSEGAME_COUNTDOWN "它将结束游戏在%d秒以后。"
+    IDS_CLOSEMAINGAME       "放弃九龙争霸。"
+    IDS_CLOSEGAMEANDRETURNTOCHARACTERSELECT "回到英雄选择?"
+    IDS_CC_EMPTYNEWCHARACTERNAME "新英雄的名字没有被设置。"
+    IDS_CC_SHORTNEWCHARACTERNAME "这个英雄的名字是短太多。输入超过1封信件。"
+    IDS_NOTALLUSEBONUSPOINT "气点的分派没有被完成。"
+    IDS_CONFIRMCREATENEWCHARACTER "创造新英雄?"
+    IDS_FSTT_WALKBUTTON     "步行"
+    IDS_FSTT_PICKBUTTON     "自动拾取"
+    IDS_FSTT_CHARACTERINFOBUTTON "英雄信息 "
+    IDS_FSTT_MINIMAPBUTTON  "小地图"
+    IDS_FSTT_QUESTBUTTON    "任务信息"
+    IDS_FSTT_BATTLEMODEBUTTON "争斗情况"
+    IDS_FSTT_INVENTORYBUTTON "拥有物品"
+    IDS_FSTT_SKILLBUTTON    "武功宝书"
+    IDS_FSTT_COMMUNITYBUTTON "用户集团"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FSTT_OPTIONBUTTON   "系统"
+    IDS_FSTT_INNEREXPVALUE  "经验值"
+    IDS_FSTT_OVERCROWDING   "愤怒价值"
+    IDS_FSTT_STATUSVIEWCHANGEBUTTON "零力/心力/精力 开关"
+    IDS_FSTT_ICONWINDOW     "减到最小"
+    IDS_FSTT_MINIMIZEBUTTON "小窗口"
+    IDS_FSTT_QUICKSLOTBUTTON "快槽孔"
+    IDS_FSTT_HEATH          "体力"
+    IDS_FSTT_INNER          "内力"
+    IDS_FSTT_STAMINA        "精力"
+    IDS_FSTT_SOUL           "零力"
+    IDS_FSTT_HEART          "心力"
+    IDS_FSTT_RUNBUTTON      "奔跑"
+    IDS_FSTT_PEACEMODEBUTTON "和平情况"
+    IDS_FAILEDCREATENEWCHARACTER "无法在新英雄创作。"
+    IDS_FAILEDSELECTCHARACTER "无法在英雄选择。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FAILEDDELETECHARACTER "无法消灭这个英雄。"
+    IDS_SUCCESSSELECTCHARACTER "它是成功进入领域。开始游戏。"
+    IDS_SUCCESSDELETECHARACTER "这个英雄被消灭了在法线。"
+    IDS_MMTT_ZOOMIN         "小地图扩大"
+    IDS_MMTT_ZOOMOUT        "小地图缩小"
+    IDS_WINDOW_MINIMIZE     "关闭窗口"
+    IDS_QSTT_NEXT           "下个集合"
+    IDS_QSTT_PREV           "早先集合"
+    IDS_QSTT_TYPECHANGE     "改变快槽孔形式 "
+    IDS_CHATWINMAX          "扩大闲谈窗口"
+    IDS_CHATWINMIN          "缩小闲谈窗口"
+    IDS_QUESTW_INGQUEST     "完成的任务"
+    IDS_QUESTW_ENDQUEST     "未完成的任务"
+    IDS_NAME                "名字"
+    IDS_CLASS               "种类"
+    IDS_ATTACKPOWER         "攻击力"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ATTACKSUCCESSLEVEL  "攻击的成功价值"
+    IDS_WEIGHT              "重量"
+    IDS_REQUESTVALUE        "需求价值"
+    IDS_EFFECT              "状态效果"
+    IDS_LEVELNAME_0         "无"
+    IDS_LEVELNAME_1         "忘我之境"
+    IDS_LEVELNAME_2         "凝神入气穴"
+    IDS_LEVELNAME_3         "玉洞双吹"
+    IDS_LEVELNAME_4         "周天火符"
+    IDS_LEVELNAME_5         "阳光二现"
+    IDS_LEVELNAME_6         "五龙奉圣"
+    IDS_LEVELNAME_7         "日月合?"
+    IDS_LEVELNAME_8         "玉?金花"
+    IDS_LEVELNAME_9         "五气朝元"
+    IDS_LEVELNAME_10        "三华聚顶"
+    IDS_LEVELNAME_11        "赤蛇透关"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LEVELNAME_12        "天花亂坠"
+    IDS_LEVELNAME_13        "返扑归真"
+    IDS_LEVELNAME_14        "返老还童"
+    IDS_LEVELNAME_15        "登峯造极"
+    IDS_LEVELNAME_16        "坐脫立亡"
+    IDS_LEVELNAME_17        "?空粉碎"
+    IDS_LEVELNAME_18        "登仙"
+    IDS_LEVELNAME_19        "天神"
+    IDS_LEVELNAME_20        "天外天"
+    IDS_GROUPNAME_0         "浪人"
+    IDS_GROUPNAME_1         "丐帮"
+    IDS_GROUPNAME_2         "黑龙帮"
+    IDS_GROUPNAME_3         "排教"
+    IDS_GROUPNAME_4         "武当派"
+    IDS_GROUPNAME_5         "海东仙门"
+    IDS_GROUPNAME_6         "魔教"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GROUPNAME_7         "少林寺"
+    IDS_GROUPNAME_8         "东影"
+    IDS_GROUPNAME_9         "绿林徒"
+    IDS_GROUPNAME_10        "刺客楼"
+    IDS_GROUPNAME_11        "东厂"
+    IDS_INVALIDCHARACTERNAME "Invalid character name."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Korean resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_EMPEROROFDRAGONS    ICON    DISCARDABLE     "EmperorOfDragons.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_EMPEROROFDRAGONS MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_EMPEROROFDRAGONS ACCELERATORS MOVEABLE PURE 
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""resource.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_ARROWCURSOR         CURSOR  DISCARDABLE     "cur00001.cur"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,5,0,10
+ PRODUCTVERSION 0,5,0,10
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041204b0"
+        BEGIN
+            VALUE "Comments", "Programming by Park il jun\0"
+            VALUE "CompanyName", "Indy21 co.,LTD\0"
+            VALUE "FileDescription", "Emperor of dragons\0"
+            VALUE "FileVersion", "0, 5, 0, 10\0"
+            VALUE "InternalName", "EmperorOfDragons\0"
+            VALUE "LegalCopyright", "Copyright ㄏ 2002 Indy 21 co.,LTD\0"
+            VALUE "LegalTrademarks", "Created by _X\0"
+            VALUE "OriginalFilename", "EmperorOfDragons.exe\0"
+            VALUE "PrivateBuild", "0, 5, 0, 101\0"
+            VALUE "ProductName", "Indy21 EmperorOfDragons\0"
+            VALUE "ProductVersion", "0, 5, 0, 10\0"
+            VALUE "SpecialBuild", "0000\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_TITLE           "晰祝畛"
+    IDS_DISCRYPTION         "Programming by Park il jun <kerygma@netian.com>"
+    IDC_EMPEROROFDRAGONS    "EMPEROROFDRAGONS"
+    IDS_INITIALIZEGAME      "霸烙阑 檬扁拳 吝 涝聪促."
+    IDS_CONNECTLOGINSERVER  "肺弊牢 辑滚俊 立加吝涝聪促."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TIMEOUT_RETRY       "鸥烙酒眶 登菌嚼聪促. 促矫肺弊牢 钦聪促."
+    IDS_CANNOTCONNECTELOGINSERVER "肺弊牢 辑滚俊 立加 且 荐 绝菌嚼聪促."
+    IDS_REQUESTLOGINRESULT  "肺弊牢 搬苞甫 夸没吝涝聪促."
+    IDS_TIMEOUT_RETRYREQUESTLOGINRESULT 
+                            "鸥烙酒眶 登菌嚼聪促. 肺弊牢 搬苞甫 促矫夸没钦聪促."
+    IDS_CANNOTDOWNLOADLOGINRESULT "肺弊牢 搬苞甫 罐阑 荐 绝菌嚼聪促."
+    IDS_CANNOTCONNECTEGAMESERVER "霸烙 辑滚俊 立加 且 荐 绝菌嚼聪促."
+    IDS_LOGINGAMESERVER_COUNTDOWNMESSAGE 
+                            "霸烙 辑滚俊 立加吝涝聪促. %d檬 饶俊 秒家邓聪促."
+    IDS_LOGINGAMESERVER     "霸烙 辑滚俊 立加吝涝聪促."
+    IDS_CANCELCONNECT       "立加阑 秒家钦聪促."
+    IDS_EMPTY_IDORPASSWORD  "酒捞叼客 菩胶况靛甫 葛滴 持绢 林技夸."
+    IDS_CONNECTEDGAMESERVER "霸烙辑滚俊 立加沁嚼聪促."
+    IDS_CLOSEGAME           "备锋里菩甫 辆丰窍矫摆嚼聪鳖 ?"
+    IDS_TOOLTIP_LOGIN       "肺弊牢"
+    IDS_TOOLTIP_ENDGAME     "霸烙 辆丰"
+    IDS_FAILEDCREATECHARACTER "货肺款 牢拱 积己俊 角菩沁嚼聪促 !"
+    IDS_EMPTYCHARACTERSLOT  "积己登绢乐绰 牢拱捞 绝嚼聪促."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_NONECHAR            "夙"
+    IDS_LEVELSTARSTRING     "己"
+    IDS_CONFIRMDELETECHARACTER "急琶等 牢拱阑 昏力窍矫摆嚼聪鳖 ?"
+    IDS_DELETINGCHARACTER   "急琶等 牢拱阑 昏力窍绰 吝涝聪促."
+    IDS_REMOVEDCHARACTER    "急琶等 牢拱捞 昏力登菌嚼聪促."
+    IDS_FAILEDSENDMESSAGETOSERVER "辑滚肺狼 单捞磐 傈价俊 角菩沁嚼聪促."
+    IDS_LOGINFAIL_INVALIDID "牢刘且 荐 绝绰 ID涝聪促."
+    IDS_LOGINFAIL_ALREADYCONNECTED "捞固 肺弊牢登绢 乐绰 蜡历涝聪促."
+    IDS_LOGINFAIL_INVALIDPASSWORD "菩胶况靛啊 撇啡嚼聪促."
+    IDS_LOGINFAIL_UNKNOWNERROR "辑滚螟俊辑 舅 荐 绝绰 俊矾啊 惯积窍看嚼聪促."
+    IDS_WSAASYNCERROR       "WSAAsyncSelect 角菩. 俊矾内靛=%d"
+    IDS_FAILEDSOCKETCONNECT "Socket connect 角菩. 俊矾内靛=%d"
+    IDS_FAILEDRECIEVEPACKET "辑滚肺狼 单捞磐 荐脚俊 角菩沁嚼聪促.[_ECode:%d]"
+    IDS_DISCONNECTEDLOGINSERVER 
+                            "肺弊牢 辑滚客狼 楷搬捞 谗绢脸嚼聪促.[_ECode:%d]"
+    IDS_DISCONNECTEDGAMESERVER 
+                            "霸烙 辑滚客狼 楷搬捞 谗绢脸嚼聪促. [_ECode:%d]"
+    IDS_ADMINCLOSEGAME      "霸烙阑 辆丰钦聪促. 努肺令海鸥 抛胶飘俊 曼咯秦林寂辑 皑荤钦聪促."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_CLOSEGAME_COUNTDOWN "%d檬 饶俊 霸烙阑 辆丰窍摆嚼聪促."
+    IDS_CLOSEMAINGAME       "霸烙阑 辆丰钦聪促."
+    IDS_CLOSEGAMEANDRETURNTOCHARACTERSELECT 
+                            "牢拱 急琶鄂栏肺 倒酒啊矫摆嚼聪鳖 ?"
+    IDS_CC_EMPTYNEWCHARACTERNAME "货肺款 牢拱狼 捞抚捞 汲沥登瘤 臼疽嚼聪促 !"
+    IDS_CC_SHORTNEWCHARACTERNAME 
+                            """牢拱狼 捞抚捞 呈公 陋嚼聪促. 1磊捞惑栏肺 涝仿窍技夸. !"""
+    IDS_NOTALLUSEBONUSPOINT "穴且寸捞 肯丰登瘤 臼疽嚼聪促 !"
+    IDS_CONFIRMCREATENEWCHARACTER "货肺款 牢拱阑 积己窍矫摆嚼聪鳖 ?"
+    IDS_FSTT_WALKBUTTON     "叭扁"
+    IDS_FSTT_PICKBUTTON     "酒捞袍 凛扁"
+    IDS_FSTT_CHARACTERINFOBUTTON "牢拱 沥焊"
+    IDS_FSTT_MINIMAPBUTTON  "固聪甘"
+    IDS_FSTT_QUESTBUTTON    "涅胶飘"
+    IDS_FSTT_BATTLEMODEBUTTON "傈捧 葛靛"
+    IDS_FSTT_INVENTORYBUTTON "硅扯"
+    IDS_FSTT_SKILLBUTTON    "公傍厚鞭"
+    IDS_FSTT_COMMUNITYBUTTON "目孤聪萍"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FSTT_OPTIONBUTTON   "可记"
+    IDS_FSTT_INNEREXPVALUE  "郴傍荐困 版氰摹"
+    IDS_FSTT_OVERCROWDING   "气林"
+    IDS_FSTT_STATUSVIEWCHANGEBUTTON "康仿/缴仿/沥仿 傈券"
+    IDS_FSTT_ICONWINDOW     "酒捞能拳"
+    IDS_FSTT_MINIMIZEBUTTON "弥家拳"
+    IDS_FSTT_QUICKSLOTBUTTON "狞浇吩"
+    IDS_FSTT_HEATH          "眉仿"
+    IDS_FSTT_INNER          "郴仿"
+    IDS_FSTT_STAMINA        "沥仿"
+    IDS_FSTT_SOUL           "康仿"
+    IDS_FSTT_HEART          "缴仿"
+    IDS_FSTT_RUNBUTTON      "崔府扁"
+    IDS_FSTT_PEACEMODEBUTTON "乞拳 葛靛"
+    IDS_FAILEDCREATENEWCHARACTER "货肺款 牢拱 积己俊 角菩沁嚼聪促 !"
+    IDS_FAILEDSELECTCHARACTER "牢拱 急琶俊 角菩沁嚼聪促."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FAILEDDELETECHARACTER "急琶茄 牢拱阑 昏力且 荐 绝嚼聪促."
+    IDS_SUCCESSSELECTCHARACTER 
+                            "辑滚 立加俊 己傍 窍看嚼聪促. 霸烙阑 矫累钦聪促."
+    IDS_SUCCESSDELETECHARACTER "急琶等 牢拱捞 沥惑栏肺 昏力登菌嚼聪促."
+    IDS_MMTT_ZOOMIN         "固聪甘犬措"
+    IDS_MMTT_ZOOMOUT        "固聪甘绵家"
+    IDS_WINDOW_MINIMIZE     "芒摧扁"
+    IDS_QSTT_NEXT           "促澜浇吩"
+    IDS_QSTT_PREV           "捞傈浇吩"
+    IDS_QSTT_TYPECHANGE     "狞浇吩 屈怕函版"
+    IDS_CHATWINMAX          "盲泼扩档快 犬措"
+    IDS_CHATWINMIN          "盲泼扩档快 绵家"
+    IDS_QUESTW_INGQUEST     "柳青 涅胶飘"
+    IDS_QUESTW_ENDQUEST     "肯丰 涅胶飘"
+    IDS_NAME                "捞抚"
+    IDS_CLASS               "拌凯"
+    IDS_ATTACKPOWER         "傍拜仿"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ATTACKSUCCESSLEVEL  "傍拜己傍摹"
+    IDS_WEIGHT              "公霸"
+    IDS_REQUESTVALUE        "夸备摹"
+    IDS_EFFECT              "瓤苞"
+    IDS_LEVELNAME_0         "夙"
+    IDS_LEVELNAME_1         "噶酒瘤版"
+    IDS_LEVELNAME_2         "览脚涝扁趋"
+    IDS_LEVELNAME_3         "苛悼街秒"
+    IDS_LEVELNAME_4         "林玫拳何"
+    IDS_LEVELNAME_5         "剧堡捞泅"
+    IDS_LEVELNAME_6         "坷锋豪己"
+    IDS_LEVELNAME_7         "老岿钦寒"
+    IDS_LEVELNAME_8         "苛抗陛拳"
+    IDS_LEVELNAME_9         "坷扁炼盔"
+    IDS_LEVELNAME_10        "伙拳秒沥"
+    IDS_LEVELNAME_11        "利荤捧包"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LEVELNAME_12        "玫拳抄眠"
+    IDS_LEVELNAME_13        "馆冠蓖柳"
+    IDS_LEVELNAME_14        "馆肺券悼"
+    IDS_LEVELNAME_15        "殿豪炼必"
+    IDS_LEVELNAME_16        "谅呕涝噶"
+    IDS_LEVELNAME_17        "倾傍盒尖"
+    IDS_LEVELNAME_18        "殿急"
+    IDS_LEVELNAME_19        "殿急"
+    IDS_LEVELNAME_20        "殿急"
+    IDS_GROUPNAME_0         "扯牢"
+    IDS_GROUPNAME_1         "俺规"
+    IDS_GROUPNAME_2         "孺锋规"
+    IDS_GROUPNAME_3         "硅背"
+    IDS_GROUPNAME_4         "公寸"
+    IDS_GROUPNAME_5         "秦悼急巩"
+    IDS_GROUPNAME_6         "付背"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_GROUPNAME_7         "家覆荤"
+    IDS_GROUPNAME_8         "悼康"
+    IDS_GROUPNAME_9         "踌覆档"
+    IDS_GROUPNAME_10        "磊按风"
+    IDS_GROUPNAME_11        "悼芒"
+    IDS_INVALIDCHARACTERNAME 
+                            "牢拱 捞抚俊 倾侩且 荐 绝绰 巩磊凯捞 器窃登绢乐嚼聪促."
+    IDS_USEWEAPON           "荤侩公扁"
+    IDS_ZENWASTESTRING      "郴仿家葛樊"
+    IDS_REQUIREMENT         "夸备 郴傍 荐困"
+END
+
+#endif    // Korean resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SELECTDEVICE DIALOG DISCARDABLE  0, 0, 199, 78
+STYLE DS_CENTER | WS_POPUP | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_ADAPTER_COMBO,50,10,141,100,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Windowed mode",IDC_WINDOW,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,49,55,85,15
+    CONTROL         "&Fullscreen mode",IDC_FULLSCREEN,"Button",
+                    BS_AUTORADIOBUTTON,49,41,75,15
+    COMBOBOX        IDC_MODES_COMBO,50,27,141,204,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,141,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,56,50,14
+    LTEXT           "Resolution:",IDC_STATIC,10,29,35,8
+    EDITTEXT        IDC_EDITW,50,27,34,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDITH,87,27,34,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "&Adapter",IDC_STATIC,11,12,25,8
+    CONTROL         "&Windowed mode",IDC_WINDOW2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,49,55,85,15
+END
+
+IDD_COMMANDDIALOG DIALOGEX 0, 0, 319, 319
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "_XKernel command window"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "[ Command ]",IDC_STATIC,7,22,162,148
+    GROUPBOX        "[ View ]",IDC_STATIC,172,22,139,148
+    COMBOBOX        IDC_FILLMODECOMBO,66,38,46,87,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Fillmode",IDC_STATIC,13,39,31,11
+    CONTROL         "&Fog",IDC_FOGCHECK,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,12,54,61,10
+    LTEXT           "Move to xz",IDC_STATIC,13,68,49,11
+    LTEXT           "Move to user",IDC_STATIC,13,82,49,11
+    LTEXT           "Move to mob",IDC_STATIC,13,97,49,11
+    LTEXT           "Far plane",IDC_STATIC,13,125,49,11
+    PUSHBUTTON      "&local user coord",IDC_VIEWLOCALUSERCOORDBUTTON,177,36,
+                    61,10
+    PUSHBUTTON      "&Command list",IDC_VIEWCOMMANDLISTBUTTON,177,49,61,10
+    CONTROL         "Runtime info...",IDC_SCRINFOCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,177,62,61,11
+    CONTROL         "Axis",IDC_AXISCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,75,61,11
+    CONTROL         "Object",IDC_OBJECTVIEWCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,88,61,11
+    CONTROL         "Frustum",IDC_FRUSTUMVIEWCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,101,61,11
+    CONTROL         "My setting",IDC_MYSETTINGCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,114,61,11
+    CONTROL         "Lens flare",IDC_VIEWLENSFLARECHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,177,127,61,11
+    CONTROL         "&OBB",IDC_OBBCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,177,141,61,11
+    CONTROL         "&Light model",IDC_LIGHTMODELCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,177,154,61,11
+    EDITTEXT        IDC_FARPLANEEDIT,66,124,46,12,ES_AUTOHSCROLL
+    CONTROL         "User culling",IDC_USERCULLINGCHECK,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,13,110,60,11
+    EDITTEXT        IDC_MOVEXZEDITX,66,67,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOVEXZEDITZ,117,67,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOVETOUSERNAME,66,81,46,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MOVETOMOBNAME,66,95,46,12,ES_AUTOHSCROLL
+    LISTBOX         IDC_COMMANDHISTORYLIST,13,275,292,40,
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Run",IDC_RUNCOMMANDBUTTON,278,6,33,11
+    CONTROL         "&Target position",IDC_TARGETPOSITIONCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,61,61,11
+    CONTROL         "Terrain &RTime",IDC_TERRAINRENDERTIMECHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,75,61,11
+    CONTROL         "&Normal vector",IDC_TERRAINNORMALCHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,87,61,11
+    GROUPBOX        "[ Environment ]",IDC_STATIC,7,173,304,98
+    CONTROL         "&Use texture",IDC_USETEXTURECHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,243,101,61,11
+    LISTBOX         IDC_ENVSETLIST,13,185,121,81,LBS_NOINTEGRALHEIGHT | NOT 
+                    WS_BORDER | WS_VSCROLL | WS_TABSTOP,WS_EX_STATICEDGE
+    CONTROL         "Slider1",IDC_REDSLIDER,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,187,186,113,10
+    CONTROL         "Slider1",IDC_GREENSLIDER,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,187,201,113,10
+    CONTROL         "Slider1",IDC_BLUESLIDER,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,187,216,113,10
+    CONTROL         "Slider1",IDC_ALPHASLIDER,"msctls_trackbar32",TBS_TOP | 
+                    TBS_NOTICKS | WS_TABSTOP,187,230,113,10
+    EDITTEXT        IDC_REDEDIT,138,188,44,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_GREENEDIT,138,201,44,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_BLUEEDIT,138,214,44,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_ALPHAEDIT,138,227,44,12,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_VALUEEDIT,189,249,56,12,ES_AUTOHSCROLL
+    LTEXT           "Value",IDC_STATIC,138,250,20,8
+END
+
+IDD_XMESSAGEDIALOG DIALOG DISCARDABLE  0, 0, 231, 94
+STYLE WS_POPUP
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_ADMINCOMMANDDIALOG DIALOGEX 0, 0, 271, 475
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "_XKernel command window"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "[ Command ]",-1,7,22,151,241
+    GROUPBOX        "[ View ]",-1,161,22,102,241
+    PUSHBUTTON      "&local user coord",IDC_VIEWLOCALUSERCOORDBUTTON,167,36,
+                    61,10
+    PUSHBUTTON      "&Command list",IDC_VIEWCOMMANDLISTBUTTON,167,49,61,10
+    CONTROL         "&User list",IDC_USERLISTCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,63,61,11
+    CONTROL         "&Mob list",IDC_MOBLISTCHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,167,76,61,11
+    LISTBOX         IDC_COMMANDHISTORYLIST,7,268,256,203,
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Run",IDC_RUNCOMMANDBUTTON,230,6,33,11
+END
+
+IDD_DEBUGWINDOW DIALOGEX 0, 0, 319, 404
+STYLE WS_POPUP | WS_CAPTION | WS_THICKFRAME
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "_XKernel debug window"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LISTBOX         IDC_DEBUGSTRINGLIST,0,0,315,391,NOT LBS_NOTIFY | 
+                    LBS_NOINTEGRALHEIGHT | NOT WS_BORDER | WS_VSCROLL | 
+                    WS_TABSTOP
+    PUSHBUTTON      "Clear log",IDC_CLEARBUTTON,265,393,45,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SELECTDEVICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 191
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 70
+    END
+
+    IDD_COMMANDDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        VERTGUIDE, 13
+        VERTGUIDE, 62
+        VERTGUIDE, 66
+        VERTGUIDE, 112
+        VERTGUIDE, 117
+        VERTGUIDE, 135
+        VERTGUIDE, 138
+        VERTGUIDE, 182
+        VERTGUIDE, 187
+        VERTGUIDE, 243
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 315
+        HORZGUIDE, 175
+    END
+
+    IDD_XMESSAGEDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 224
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+
+    IDD_ADMINCOMMANDDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        VERTGUIDE, 13
+        VERTGUIDE, 62
+        VERTGUIDE, 66
+        VERTGUIDE, 112
+        VERTGUIDE, 117
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 471
+        HORZGUIDE, 263
+        HORZGUIDE, 268
+    END
+
+    IDD_DEBUGWINDOW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 315
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_COMMANDDIALOG DLGINIT
+BEGIN
+    IDC_FILLMODECOMBO, 0x403, 6, 0
+0x4f50, 0x4e49, 0x0054, 
+    IDC_FILLMODECOMBO, 0x403, 5, 0
+0x4957, 0x4552, "\000" 
+    IDC_FILLMODECOMBO, 0x403, 6, 0
+0x4f53, 0x494c, 0x0044, 
+    0
+END
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
