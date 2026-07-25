@@ -162,8 +162,8 @@ The VM/toolchain evidence bundle must contain:
 
 ### Before first controlled compilation
 
-- translate the already approved player-only, anti-cheat, GM isolation, and
-  stale `d3dx9dt` decisions into a reviewable VC6 project patch;
+- materialize the frozen `VC6-RESTORATION-PATCHSET.md` specification as an
+  IDE-generated, reviewable VC6 unified diff;
 - statically validate June 2010 x86 D3DX imports against all client calls;
 - resolve exact VC6 `/NODEFAULTLIB` argument behavior;
 - freeze and hash the VM.
@@ -194,4 +194,3 @@ June 2010 DirectX SDK x86/D3DX 9.43.
 
 **Modernization reference:** `v142` or later only after the preservation
 artifact and behavior oracle exist.
-
