@@ -277,7 +277,7 @@ struct MSG_SVRINFO_PK_ZONE : public MSG_SERVER_INFO
 	#undef _XENABLE_GAMEGUARD
 #endif
 
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
 	#ifdef _XENABLE_GAMEGUARD
 		#define _XUSE_GAMEGUARD
 		#include "NPGameLib.h"

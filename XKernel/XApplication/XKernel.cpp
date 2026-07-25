@@ -95,7 +95,7 @@ BOOL CheckExistFile( LPCSTR filename, BOOL resetAttrib )
 	#pragma message( "undefine game guard : apex module." )
 #endif
 
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
 	#ifdef _XENABLE_HACKSHEILD
 		#define _XUSE_HACKSHEILD
 	#else
@@ -1524,7 +1524,7 @@ int __stdcall WinMain(HINSTANCE hI, HINSTANCE hP, TCHAR *Cmd, int nShow)
 		_XLog( "Begin kernel." );
 
 		// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
-		#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) 
+		#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
 
 		LPCTSTR pModuleFilename = _XArgv(0);
 		if( pModuleFilename )

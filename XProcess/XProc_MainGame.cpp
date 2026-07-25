@@ -24,7 +24,7 @@
 	#undef _XENABLE_GAMEGUARD
 #endif
 
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
 	#ifdef _XENABLE_GAMEGUARD
 		#define _XUSE_GAMEGUARD
 	#endif
@@ -6293,7 +6293,7 @@ if( g_pLocalUser->m_CharacterInfo.Get_gm_level() == 0 )
 #endif
 
 // 일본은 GameGuard basic license 이므로 실행파일 압축을 사용 안하므로 파일 사이즈 체크를 안함.
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE) 
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE)
 
 	static DWORD iCurrentThirdCheckTime = 0;
 

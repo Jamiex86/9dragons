@@ -1427,8 +1427,8 @@
       <Optimization>MaxSpeed</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./HackDetector/HackShield;./HackDetector/GameGuard;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./HackDetector/XTrap;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_XPLAYERCLIENT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_XPLAYERCLIENT;_XPLAYER_NO_LEGACY_ANTICHEAT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Compiled/US/release/EmperorOfDragons\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
       <PrecompiledHeaderOutputFile>.\Compiled/US/release/EmperorOfDragons\EmperorOfDragons.pch</PrecompiledHeaderOutputFile>
@@ -2689,7 +2689,9 @@
     <ClCompile Include="Network\XNetwork_PKPenalty.cpp" />
     <ClCompile Include="network\XNetwork_quest.cpp" />
     <ClCompile Include="Network\XNetwork_UniGroupLobby.cpp" />
-    <ClCompile Include="Network\XNetwork_XTrap.cpp" />
+<ClCompile Include="Network\XNetwork_XTrap.cpp">
+  <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+</ClCompile>
     <ClCompile Include="NMClass\NMFiles.cpp" />
     <ClCompile Include="Script\XCollectionItem.cpp" />
     <ClCompile Include="Script\XCollectionManager.cpp" />

@@ -48,7 +48,7 @@ static void			_XLogDeviceInfos(void);
 	#undef _XENABLE_GAMEGUARD
 #endif
 
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
 	#ifdef _XENABLE_HACKSHEILD
 		#define _XUSE_HACKSHEILD
 	#else

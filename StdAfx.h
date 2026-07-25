@@ -10,6 +10,10 @@
 #error GM and administrator modes are forbidden in the normal-player target
 #endif
 
+#if defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && (defined(_XUSE_GAMEGUARD) || defined(_XUSE_HACKSHEILD) || defined(_XUSE_XTRAP) || defined(_XUSEAPEXMODULE) || defined(_XDEF_MEMORYHACKDEFENCE) || defined(_XDEF_DETECTSPEEDHACK))
+#error Legacy anti-cheat is forbidden in the normal-player target
+#endif
+
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000

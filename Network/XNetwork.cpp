@@ -144,7 +144,7 @@
 	#undef _XENABLE_GAMEGUARD
 #endif
 	
-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
 	#ifdef _XENABLE_GAMEGUARD
 		#define _XUSE_GAMEGUARD
 		extern struct MSG_GGAUTH g_GameGuardData;
@@ -10079,7 +10079,7 @@ BOOL _XNetwork::SendPacket( int type, int param1, int param2, int param3, int pa
 				extern LONG g_ModuleFileSize;
 
 				// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
-				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)  
+				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
 
 				if( g_ModuleFileSize < 2500000 ) // 모듈 파일 사이즈가 정상일때는 버전 정상으로 보냄.
 				{
@@ -10102,7 +10102,7 @@ BOOL _XNetwork::SendPacket( int type, int param1, int param2, int param3, int pa
 				extern LONG g_ModuleFileSize;
 
 				// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
-				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) 
+				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
 
 				if( g_ModuleFileSize < 2500000 ) // 모듈 파일 사이즈가 정상일때는 버전 정상으로 보냄.
 				{

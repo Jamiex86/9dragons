@@ -818,8 +818,8 @@
       <Optimization>MaxSpeed</Optimization>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>./;.././;./../XGamebase/Include;./../XGamebase/src/libs/jpeg;./../XGamebase/Include/Template;../HackDetector/HackShield;../HackDetector/GameGuard;../HackDetector/XTrap;../MeshControl;../XParticleCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;_ACCLAIM_VERSION;_XENGLISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;.././;./../XGamebase/Include;./../XGamebase/src/libs/jpeg;./../XGamebase/Include/Template;../MeshControl;../XParticleCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_XPLAYER_NO_LEGACY_ANTICHEAT;NDEBUG;WIN32;_LIB;_ACCLAIM_VERSION;_XENGLISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\../Compiled/US/release/XKernel\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
       <PrecompiledHeaderOutputFile>.\../Compiled/US/release/XKernel\XKernel.pch</PrecompiledHeaderOutputFile>
