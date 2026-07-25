@@ -172,3 +172,9 @@ The complete static import-library/runtime pairing results are recorded in
 `RUNTIME-DLL-PAIRING-AUDIT.md`. Bink, FMOD, QHTM, XWebPage and SpeedTreeRT now
 have compatible supplied DLLs at the PE import/export boundary; provenance,
 approved placement and runtime behavior remain separate gates.
+
+The frozen preservation and modernization choices are recorded in
+`PRESERVATION-TOOLCHAIN-MATRIX.md`. The primary preservation reference is VC6
+SP6 x86 with the original project lineage and June 2010 DirectX SDK x86
+components. The existing `v142` conversion is retained as a diagnostic and
+later modernization route, not treated as ABI-equivalent.
