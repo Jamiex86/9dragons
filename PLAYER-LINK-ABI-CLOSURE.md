@@ -150,3 +150,8 @@ The user has supplied `fmod.dll`, `XWebPage.dll`, `SpeedTreeRT.dll`, `QHTM.dll`,
 ## Verdict adjustment
 
 Source completeness for the normal player remains high: no additional missing proprietary player `.cpp`, `.h`, or resource was found in this pass. Link readiness is lower because `mp3decoder.lib`, the selected DirectX SDK, SpeedTree promotion, and linker-policy reconstruction remain open. This finding does **not** justify a claim that the client can yet be linked, started, or used correctly.
+
+The complete static import-library/runtime pairing results are recorded in
+`RUNTIME-DLL-PAIRING-AUDIT.md`. Bink, FMOD, QHTM, XWebPage and SpeedTreeRT now
+have compatible supplied DLLs at the PE import/export boundary; provenance,
+approved placement and runtime behavior remain separate gates.
