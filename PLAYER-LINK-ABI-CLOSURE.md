@@ -7,7 +7,9 @@ Scope: static inspection only; `US_Release|Win32`; no compilation or binary exec
 
 The normal player source/project closure is substantially better than the raw archive implied, but linker closure is **not yet complete**. A very strong public candidate for the previously absent `mp3decoder.lib` has now been located, but is not promoted into the preserved tree pending provenance/licensing review. SpeedTree is likewise a separately quarantined, strongly matching candidate rather than a provenance-confirmed dependency. The other staged middleware import libraries have the correct 32-bit decorated import style and expected DLL identity, but static symbol shape alone does not prove behavioral compatibility.
 
-The first controlled build must not begin until the CRT/default-library contradiction and DirectX SDK selection are resolved deliberately. A successful forced link under arbitrary settings would not establish a faithful client.
+The first controlled build must not begin until the historical mixed-CRT
+policy and DirectX SDK selection are resolved deliberately. A successful
+forced link under arbitrary settings would not establish a faithful client.
 
 ## Internal build graph
 
@@ -15,7 +17,7 @@ The first controlled build must not begin until the CRT/default-library contradi
 flowchart LR
   XG["XGamebase.lib<br/>included source"] --> XF["XFControl.dll + XFControl.lib"]
   XK["XKernel.lib<br/>included source"] --> XF
-  MP3["mp3decoder.lib<br/>ABSENT"] --> XF
+  MP3["mp3decoder.lib<br/>quarantined exact-interface candidate"] --> XF
   XG --> APP["NineDragons.exe"]
   XK --> APP
   XF --> APP
@@ -106,14 +108,20 @@ be reconstructed carefully.
 
 ## Configuration blockers
 
-### 1. Contradictory CRT directives
+### 1. Historical mixed-CRT directives
 
 All four primary US projects select `MultiThreadedDLL` (`/MD`). The main executable nevertheless:
 
 - explicitly adds both `MSVCRT.LIB` and `LIBCMT.LIB`; and
 - simultaneously places both names in `IgnoreSpecificDefaultLibraries`.
 
-`XFControl` also ignores `LIBCMT.LIB`. This looks like historical/manual linker policy damaged or made ambiguous during project conversion. It must be reconstructed from the older `.dsp`/`.mak` lineage and any original successful link log. Do not “fix” this merely by removing whichever diagnostic appears first.
+`XFControl` also carries unusual CRT suppression. The dedicated
+`CRT-LINKER-POLICY-AUDIT.md` establishes that this predates project conversion:
+the original VC6 `.dsp` files contain the same arrangement. The likely intent
+was `/MD` for player code while satisfying static `/MT` objects in
+`mp3decoder.lib` and `radsdk6.lib`. The exact effect of the original quoted
+two-name `/NODEFAULTLIB` argument remains to be proven. Do not “fix” this merely
+by removing whichever diagnostic appears first.
 
 ### 2. Release configuration requests a debug-flavoured D3DX library
 
@@ -143,7 +151,9 @@ The user has supplied `fmod.dll`, `XWebPage.dll`, `SpeedTreeRT.dll`, `QHTM.dll`,
 1. Review the located `playbar/nstest` `mp3decoder.lib` provenance/licensing and decide whether it may be quarantined as a candidate; its declared API comparison is already exact.
 2. Record provenance and legal status for the candidate SpeedTree SDK files before promoting them into the player tree.
 3. Identify the original DirectX 9 SDK vintage and explain the `d3dx9dt.lib` reference.
-4. Reconstruct the CRT/default-library policy from the VC6 projects and surviving link logs.
+4. Preserve the identified historical mixed-CRT baseline and obtain an
+   original binary/map/log or later-authorized VC6 linker trace before
+   translating its unusual `/NODEFAULTLIB` semantics.
 5. Pair every import library to its runtime DLL by DLL identity and complete symbol-set comparison.
 6. Freeze a preservation compiler/linker matrix. Only after that should a controlled build be proposed.
 
