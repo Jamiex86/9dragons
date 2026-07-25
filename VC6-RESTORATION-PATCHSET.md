@@ -120,21 +120,24 @@ In the active US Release `# ADD CPP` line of `XKernel/XKernel.dsp`:
 Do not delete anti-cheat source from the archive and do not alter any other
 configuration.
 
-### VC6-04 — remove the stale D3DX debug-static input
+### VC6-04 — D3DX route selection (**superseded pending acquisition**)
 
-In only the active `# ADD LINK32` line of:
+Do not remove `d3dx9dt.lib` by default. The supplied reference executable
+contains static debug D3DX code and Microsoft `nt32_chk` D3DX source paths,
+showing that the historical dependency was real.
+
+For the fidelity route, retain the active link order:
 
 ```text
 EmperorOfDragons - Win32 US_Release
 ```
 
-remove:
-
 ```text
-d3dx9dt.lib
+d3dx9dt.lib d3dx9.lib
 ```
 
-Keep:
+For the coherent June 2010 route, a separately labelled patch may remove only
+`d3dx9dt.lib` while keeping:
 
 ```text
 dxguid.lib
@@ -146,9 +149,7 @@ dxerr9.lib
 d3dxof.lib
 ```
 
-Do not modify `# ADD BASE LINK32`; it is an inherited template record rather
-than the effective configuration. Do not alter the other 66 historical
-occurrences until their configurations are separately audited.
+Do not modify `# ADD BASE LINK32` or other configurations in either route.
 
 ### VC6-05 — controlled Flash MP3 promotion
 
@@ -240,7 +241,8 @@ The generated patch must satisfy all of these static checks:
    and `XNetwork_XTrap.cpp`;
 4. no GM configuration is edited;
 5. no regional configuration is edited;
-6. only one effective `d3dx9dt.lib` occurrence is removed;
+6. `d3dx9dt.lib` remains for the fidelity route, or exactly one effective
+   occurrence is removed in the explicitly labelled June 2010 route;
 7. CRT ordering and `/NODEFAULTLIB` spelling are untouched;
 8. MP3 and SpeedTree paths remain unchanged until their separate promotion
    gates are approved;
@@ -268,4 +270,3 @@ IDE-generated diff can be mechanically checked against it later.
 The source-side restoration decisions are complete. Producing the final
 applicable VC6 unified diff now depends on acquiring and hashing the frozen VC6
 toolchain/VM; it does not require compiling the client.
-

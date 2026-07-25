@@ -48,8 +48,8 @@ the preservation reference.
 | Floating point | VC6 defaults; do not add `/fp:fast` or modern equivalents | Avoid changing simulation/render calculations |
 | Windows headers/libs | VC6/period Platform SDK set frozen with the VM; record exact file hashes | Avoid silently mixing current Windows SDK libraries |
 | DirectX SDK | Official DirectX SDK June 2010, x86 include/lib, version `9.29.1962.1` | Included headers are D3DX version 43; Microsoft maintenance baseline |
-| D3DX | `d3dx9.lib`; no `d3dx9dt.lib` | `dt` was removed in February 2005 and is stale |
-| D3DX runtime | `d3dx9_43.dll` through approved Microsoft redistribution | Required by version-43 D3DX import library |
+| D3DX fidelity route | Validated pre-Feb-2005 `d3dx9dt.lib` followed by `d3dx9.lib` | Reference EXE visibly embeds static debug D3DX |
+| D3DX coherent-maintenance route | June 2010 `d3dx9.lib` and approved `d3dx9_43.dll` redistribution | Matches recovered version-43 headers but differs from reference binary |
 | Output subsystem | Windows GUI, x86 | Original `/subsystem:windows /machine:I386` |
 | Incremental/LTCG | Disabled for the reference Release link | Original final Release does not request LTCG; deterministic full link preferred |
 
@@ -62,8 +62,9 @@ deliberate hybrid because:
 - D3DX import libraries expose a C/COM-style binary surface rather than a
   C++ standard-library boundary;
 - the source header still contains explicit `_MSC_VER >= 1200` handling;
-- using a pre-2005 `d3dx9dt.lib` would be less coherent with the recovered
-  header set.
+- a pre-2005 `d3dx9dt.lib` is less coherent with the recovered header set but
+  is now evidenced in the historical reference binary, requiring a separate
+  fidelity route.
 
 The SDK should be installed only in the isolated image, with include/library
 order recorded. Compatibility must be proven statically before a build is
@@ -189,8 +190,9 @@ A linked executable is only an artifact. Separate proof is required for:
 ## Frozen recommendation
 
 **Preservation reference:** VC6 SP6 x86 + original VC6 projects + `/MD`
-player-owned code + explicitly understood static-CRT middleware exceptions +
-June 2010 DirectX SDK x86/D3DX 9.43.
+player-owned code + explicitly understood static-CRT middleware exceptions.
+DirectX has two frozen variants: validated early static D3DX for historical
+fidelity, and June 2010 D3DX 9.43 for coherent maintenance.
 
 **Modernization reference:** `v142` or later only after the preservation
 artifact and behavior oracle exist.

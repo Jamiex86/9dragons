@@ -128,9 +128,11 @@ by removing whichever diagnostic appears first.
 `DIRECTX-SDK-LINEAGE-AUDIT.md` establishes that the included headers are D3DX
 SDK version 43 and the converted lineage names the June 2010 SDK.
 `d3dx9dt.lib` was a pre-February-2005 statically linked debug D3DX library and
-appears across every region/configuration in the VC6 project. It is therefore a
-stale inherited entry, not a US runtime requirement. The preservation baseline
-is June 2010 x86 `d3dx9.lib`; the old `dt` library should not be restored.
+appears across every region/configuration in the VC6 project. The supplied
+reference EXE contains its characteristic debug assertions and Microsoft
+`nt32_chk` D3DX source paths, so it was genuinely embedded in that historical
+derivative. The fidelity route must retain a validated early `d3dx9dt.lib`;
+the coherent June 2010 route deliberately omits it and records the deviation.
 
 ### 3. Toolset ABI
 
@@ -155,9 +157,9 @@ The user has supplied `fmod.dll`, `XWebPage.dll`, `SpeedTreeRT.dll`, `QHTM.dll`,
 
 1. Review the located `playbar/nstest` `mp3decoder.lib` provenance/licensing and decide whether it may be quarantined as a candidate; its declared API comparison is already exact.
 2. Record provenance and legal status for the candidate SpeedTree SDK files before promoting them into the player tree.
-3. Acquire and inventory the official June 2010 DirectX SDK x86 libraries,
-   record `d3dx9_43.dll` as a runtime input, and prepare—but do not yet
-   apply—the reviewable removal of stale `d3dx9dt.lib` from US Release.
+3. Acquire and inventory both the official June 2010 DirectX SDK x86
+   maintenance set and a provenance-valid early `d3dx9dt.lib` candidate;
+   keep fidelity and coherent-maintenance link plans separate.
 4. Preserve the identified historical mixed-CRT baseline and obtain an
    original binary/map/log or later-authorized VC6 linker trace before
    translating its unusual `/NODEFAULTLIB` semantics.

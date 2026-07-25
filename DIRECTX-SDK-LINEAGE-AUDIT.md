@@ -15,15 +15,22 @@ The preserved source contains DirectX evidence from two different eras:
    June 2010 DirectX SDK generation. A converted project also records an
    explicit `DXSDK (June 2010)\Include` path.
 
-Therefore `d3dx9dt.lib` is not a valid June 2010 SDK requirement. It is a stale
-project-lineage entry inherited from a pre-February-2005 build environment.
+Therefore `d3dx9dt.lib` is not a valid June 2010 SDK requirement. It is an
+inherited pre-February-2005 build dependency. Static inspection of the supplied
+reference `NineDragons.exe` subsequently found debug D3DX assertions and
+`nt32_chk\...\d3dx9` source paths in its protected payload, demonstrating that
+this old static debug implementation was genuinely embedded in at least that
+shipped derivative.
 
-Recommended preservation baseline: **DirectX SDK (June 2010), x86 libraries,
-version 9.29.1962.1**, using `d3dx9.lib` and the matching D3DX 9.43 runtime.
+Recommended coherent-maintenance baseline: **DirectX SDK (June 2010), x86
+libraries, version 9.29.1962.1**, using `d3dx9.lib` and the matching D3DX 9.43
+runtime. The fidelity baseline separately requires a validated early
+`d3dx9dt.lib`.
 
 Do not obtain an arbitrary `d3dx9dt.lib` merely to satisfy the project list.
-Doing so would combine a pre-2005 static debug D3DX implementation with 2010
-headers and potentially place debug D3DX code into the Release executable.
+For historical fidelity, locate and validate the correct pre-February-2005
+variant. For a coherent version-43 maintenance build, omit it deliberately and
+record that this differs from the observed reference binary.
 
 ## Confirmed source evidence
 
@@ -163,7 +170,8 @@ Use June 2010 headers and x86 libraries because:
 - it is the final coherent legacy SDK set;
 - Microsoft still identifies it as the maintenance SDK for old DirectX code.
 
-For this route, `d3dx9dt.lib` should be treated as a stale project entry.
+For this route, `d3dx9dt.lib` is deliberately excluded as a historical
+compatibility dependency, not dismissed as unused.
 
 ### Reproducing an original pre-2005 build environment
 
@@ -181,13 +189,14 @@ No dependency was removed in this audit. Before authoring the future patch:
 3. statically verify that all non-inline D3DX calls used by the player are
    represented by the version-43 import library;
 4. record `d3dx9_43.dll` in the runtime manifest;
-5. create a reviewable patch that removes only `d3dx9dt.lib` from the
-   `US_Release` preservation configuration;
+5. create a reviewable, explicitly labelled coherent-maintenance patch that
+   removes only `d3dx9dt.lib` from `US_Release`, while the fidelity route
+   retains the original order;
 6. leave other regional/historical configurations unchanged unless separately
    audited.
 
 Current status:
 
-**June 2010 SDK identified; `d3dx9dt.lib` classified as stale and should not be
-restored into the primary preservation toolchain.**
-
+**Two routes are required: historical fidelity retains a validated early
+`d3dx9dt.lib`; the coherent June 2010 maintenance route excludes it and uses
+D3DX 9.43.**
