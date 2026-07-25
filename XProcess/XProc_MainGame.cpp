@@ -163,9 +163,11 @@
 #include "XWindow_MnDCurrentPoint.h" //Author : ¾çÈñ¿Õ //breif :»çÁ¦ ½Ã½ºÅÛ
 #endif
 
-// GM Control windows
+// GM Control windows are excluded from the normal-player target.
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GMCommand.h"
 #include "XWindow_GM_SendNoticeMessage.h"
+#endif
 
 
 #include "XParticleList.h"
@@ -2148,6 +2150,8 @@ void XProc_MainGame::SetUIforRubiconADSystem( void )
 	*/
 
 #ifdef _XGMCLIENT
+#ifndef _XPLAYERCLIENT
+#ifndef _XPLAYERCLIENT
 	_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);	
 	if( pGMCommandWindow )
 	{
@@ -3336,6 +3340,8 @@ bool XProc_MainGame::InitDeviceObject( void )
 		pGMCommandWindow->SetWindowAnimationMode( _XGMWINDOW_ANIMATIONMODE_CLOSE );
 		_XWindow::m_GlobalPlaySoundEffect = TRUE;
 	}
+
+#endif
 
 	return true;
 }
@@ -20274,7 +20280,8 @@ void XProc_MainGame::InitializeInterface(void)
 		}
 #endif
 	}
-	
+#endif
+
 	_XWindow_Option* optionwindow = (_XWindow_Option*)g_MainWindowManager.FindWindow( _XDEF_WTITLE_OPTION );
 	if( optionwindow )
 	{	

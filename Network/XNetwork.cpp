@@ -64,7 +64,9 @@
 #include "XWindow_BlackList.h"
 #include "XWindow_MixWeapon.h"
 
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GM_UserCoordination.h"
+#endif
 
 #ifdef _XTS_ITEMMALLBROWSER	
 #include "XWindow_CashMall.h"	

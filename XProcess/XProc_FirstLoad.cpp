@@ -72,12 +72,14 @@
 #include "XWindow_CashMall.h"
 #include "XWindow_CashBox.h"
 // GM Control windows
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GMCommand.h"
 #include "XWindow_GM_SendNoticeMessage.h"
 #include "XWindow_GM_UserCoordination.h"
 #include "XWindow_GM_MonsterManage.h"
 #include "XWindow_GM_StatusControl.h"
 #include "XWindow_GM_EventManager.h"
+#endif
 
 #ifdef _XUSEFMOD
 #include "XFMODWrapper.h"
@@ -780,11 +782,13 @@ bool XProc_FirstLoad::Process( void )
 		return false;
 	}
 
+#ifndef _XPLAYERCLIENT
 	_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
 	if( pWindow )
 	{
 		pWindow->UpdateMonsterList();
 	}
+#endif
 
 	SetMessage( _XGETINTERFACETEXT(ID_STRING_FIRSTLOAD_NPCMODEL) );
 	Draw();	
@@ -3534,6 +3538,7 @@ BOOL XProc_FirstLoad::CreateMainInterface( void )
 	pEventNotice_Window->SetDocking(FALSE, 0);
 	g_MainWindowManager.InsertWindow(pEventNotice_Window);
 
+#ifndef _XPLAYERCLIENT
 	// GM Command window ==========================================================================
 	_XWindow_GMCommand* pGMCommandWindow = new _XWindow_GMCommand;
 	_XWINDOW_STRUCTURE gmwindowstruct= 
@@ -3647,6 +3652,8 @@ BOOL XProc_FirstLoad::CreateMainInterface( void )
 	pGMEventManagerWindow->SetPlaySoundEfect( TRUE );
 	g_MainWindowManager.InsertWindow(pGMEventManagerWindow);
 	
+#endif
+
 	// Create Gamble Window =============================================
 	_XWindow_Gamble* pGamble_Window = new _XWindow_Gamble;
 	_XWINDOW_STRUCTURE gamblestruct =

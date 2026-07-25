@@ -14,7 +14,9 @@
 #include "XWindow_Skill.h"
 #include "XWindow_Escape.h"
 #include "XWindow_MatchPR.h"
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GM_StatusControl.h"
+#endif
 #include "SoundEffectList.h"
 #include "XNPCScript.h"
 #include "XMessageWindow.h"

@@ -6,6 +6,10 @@
 #if !defined(AFX_STDAFX_H__A9DB83DB_A9FD_11D0_BFD1_444553540000__INCLUDED_)
 #define AFX_STDAFX_H__A9DB83DB_A9FD_11D0_BFD1_444553540000__INCLUDED_
 
+#if defined(_XPLAYERCLIENT) && (defined(_XGMCLIENT) || defined(_XADMINISTRATORMODE))
+#error GM and administrator modes are forbidden in the normal-player target
+#endif
+
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000

@@ -58,12 +58,14 @@
 #include "XWindow_GuideLine.h"
 
 // GM Control windows
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GMCommand.h"
 #include "XWindow_GM_SendNoticeMessage.h"
 #include "XWindow_GM_UserCoordination.h"
 #include "XWindow_GM_MonsterManage.h"
 #include "XWindow_GM_StatusControl.h"
 #include "XWindow_GM_EventManager.h"
+#endif
 
 #include "XNPCScriptConditionItem.h"
 #include "SoundEffectList.h"

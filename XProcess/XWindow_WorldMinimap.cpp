@@ -12,7 +12,9 @@
 #include "XWindow_TutorialIcon.h"
 #include "math.h"
 #include "XSR_STRINGHEADER.H"
+#ifndef _XPLAYERCLIENT
 #include "XWindow_GM_UserCoordination.h"
+#endif
 #include "XWindow_Debug.h"
 #include "XWindow_NPCSearch.h"
 #include "Xwindow_Poison.h"
@@ -2033,6 +2035,7 @@ void _XWindow_WorldMinimap::ProcessDblClick()
 						if( zcoord > g_LodTerrain.m_Height -1 )
 							zcoord = g_LodTerrain.m_Height -1;
 
+#ifndef _XPLAYERCLIENT
 						_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
 						if( pWindow )
 						{
@@ -2047,6 +2050,7 @@ void _XWindow_WorldMinimap::ProcessDblClick()
 							pWindow->m_ZCoordIMEControl.ClearBuffer();
 							pWindow->m_ZCoordIMEControl.AddString( buffer, strlen(buffer) );
 						}
+#endif
 					}
 				}
 #ifdef _XDWDEBUG

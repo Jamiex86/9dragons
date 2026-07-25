@@ -1428,7 +1428,7 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <WarningLevel>Level3</WarningLevel>
       <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./HackDetector/HackShield;./HackDetector/GameGuard;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./HackDetector/XTrap;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_XPLAYERCLIENT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AssemblerListingLocation>.\Compiled/US/release/EmperorOfDragons\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
       <PrecompiledHeaderOutputFile>.\Compiled/US/release/EmperorOfDragons\EmperorOfDragons.pch</PrecompiledHeaderOutputFile>
@@ -2853,12 +2853,24 @@
     <ClCompile Include="XProcess\XWindow_ExplainCharacter.cpp" />
     <ClCompile Include="XProcess\XWindow_FreeMatchInfo.cpp" />
     <ClCompile Include="xprocess\XWindow_Gamble.cpp" />
-    <ClCompile Include="XProcess\XWindow_GMCommand.cpp" />
-    <ClCompile Include="XProcess\XWindow_GM_EventManager.cpp" />
-    <ClCompile Include="XProcess\XWindow_GM_MonsterManage.cpp" />
-    <ClCompile Include="XProcess\XWindow_GM_SendNoticeMessage.cpp" />
-    <ClCompile Include="XProcess\XWindow_GM_StatusControl.cpp" />
-    <ClCompile Include="XProcess\XWindow_GM_UserCoordination.cpp" />
+    <ClCompile Include="XProcess\XWindow_GMCommand.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="XProcess\XWindow_GM_EventManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="XProcess\XWindow_GM_MonsterManage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="XProcess\XWindow_GM_SendNoticeMessage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="XProcess\XWindow_GM_StatusControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="XProcess\XWindow_GM_UserCoordination.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="xprocess\XWindow_Group.cpp" />
     <ClCompile Include="XProcess\XWindow_GuideLine.cpp" />
     <ClCompile Include="xprocess\XWindow_Hedek.cpp" />
