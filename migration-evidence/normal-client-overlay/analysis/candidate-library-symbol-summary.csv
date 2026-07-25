@@ -1,0 +1,7 @@
+path,nm_exit,defined_or_import_symbols,undefined_symbols,import_markers,stdcall_decorated_symbols,referenced_dll_names
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/BinkSDK/binkw32.lib,0,135,2,67,132,binkw32.dll
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/CWebPage/XWebPage.lib,0,15,2,7,12,XWebPage.dll
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/FMod/fmodvc.lib,0,461,2,230,458,fmod.dll
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/QHTM/QHTM.lib,0,35,18,33,30,QHTM.dll
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/dbghelp.lib,0,241,2,120,238,dbghelp.dll
+recovery/emperor-of-dragons-normal-client-overlay/overlay/Library/radsdk/radsdk6.lib,0,1556,1710,62,117,

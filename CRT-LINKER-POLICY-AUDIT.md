@@ -7,9 +7,9 @@ run.
 ## Conclusion
 
 The `MSVCRT`/`LIBCMT` mixture is **not Visual Studio conversion damage**. It is
-present verbatim in the original Visual C++ 6 `.dsp` projects and is associated
-with two old static middleware libraries that request `LIBCMT`: the Flash MP3
-decoder and `radsdk6.lib`.
+present verbatim in the original Visual C++ 6 `.dsp` projects. The Flash MP3
+decoder actively requests `LIBCMT`; `radsdk6.lib` also contains that directive
+but is now established as inactive in normal US Release.
 
 The most likely historical policy was:
 
@@ -97,12 +97,15 @@ Its API is favorable for containing CRT ownership:
 That does not remove all dual-CRT risk, but materially lowers allocator
 crossing risk at this boundary.
 
-### `radsdk6.lib`
+### `radsdk6.lib` — inactive in normal US Release
 
-The staged RAD static library also contains numerous
-`/DEFAULTLIB:"LIBCMT" /DEFAULTLIB:"OLDNAMES"` directives. It is linked directly
-into the US executable. This independently explains why `LIBCMT` handling
-exists in the main player even though player objects use `/MD`.
+The staged RAD static library contains numerous
+`/DEFAULTLIB:"LIBCMT" /DEFAULTLIB:"OLDNAMES"` directives and is named on the
+US link line. Static archives are demand-loaded, however. Normal US Release
+does not define `_ACCLAIM_IGAADSYSTEM`, so the RAD/Bink implementation and API
+calls are preprocessed out. No RAD member, and thus no member-local CRT
+directive, is expected to enter the link. The reference executable corroborates
+this; see `US-PLAYER-RAD-BINK-DEAD-LINK-AUDIT.md`.
 
 ### Import libraries
 
@@ -111,6 +114,17 @@ implementations live in DLLs, so they do not create the same static-CRT object
 problem in the client link.
 
 ## Meaning of the unusual `/NODEFAULTLIB` syntax
+
+### Superseding US Release conclusion
+
+The user-supplied reference `XFControl.dll` imports `MSVCRT.dll`, and all
+ordinary non-US release configurations suppress only `LIBCMT`. Microsoft's
+syntax requires one `/NODEFAULTLIB` option per ignored library, while the
+converted project retains `libcmt.lib msvcrt.lib` as one malformed list item.
+
+For normal `US_Release|Win32`, the reconstructed policy is therefore `/MD`
+plus suppression of `LIBCMT.LIB` only. `MSVCRT` must remain selected. See
+`US-XFCONTROL-CRT-POLICY-RESOLUTION.md`.
 
 The project does not emit two conventional switches:
 
@@ -161,7 +175,9 @@ The preservation matrix should retain:
 - `/MD` for player-owned US Release source;
 - the original library order, especially `MSVCRT` before `LIBCMT`;
 - the original VC6 quoted `/NODEFAULTLIB` spelling as a recorded baseline;
-- `mp3decoder.lib` and `radsdk6.lib` as static-CRT exceptions.
+- `mp3decoder.lib` as the demonstrated static-CRT exception;
+- `radsdk6.lib` and `binkw32.lib` as stale inactive normal-player inputs,
+  pending later verbose-link confirmation.
 
 A modernized project should not inherit this blindly. A later modernization
 route should replace or isolate static middleware behind a narrow DLL boundary
@@ -180,4 +196,3 @@ Current status:
 
 **Historically intentional mixed-CRT policy identified; exact resolution
 mechanism not yet proven.**
-

@@ -11,6 +11,11 @@ The first controlled build must not begin until the historical mixed-CRT
 policy and DirectX SDK selection are resolved deliberately. A successful
 forced link under arbitrary settings would not establish a faithful client.
 
+The Flash/XFControl chain is technically closed except for the decoder's
+licensing/provenance decision. `Library/US/XFControl.lib` is generated output,
+the reference DLL has the exact consumed export, and all normal-US SWFs are
+present; see `US-PLAYER-FLASH-XFCONTROL-END-TO-END-CLOSURE.md`.
+
 ## Internal build graph
 
 ```mermaid
@@ -37,15 +42,15 @@ This graph concerns the normal player only. GM translation units and `*_GM.lib`/
 
 | Input | Archive-relative expected path | Status | Static compatibility evidence | Remaining risk / action |
 |---|---|---:|---|---|
-| Bink import library | `Library/BinkSDK/binkw32.lib` | Staged | COFF archive; 32-bit stdcall imports; names `binkw32.dll` | Preserve paired DLL; API-call comparison remains advisable |
-| Bink runtime | `Library/BinkSDK/binkw32.dll` | Staged | Paired with import library | Runtime behavior not executed |
-| FMOD import library | `Library/FMod/fmodvc.lib` | Staged | COFF archive; 458 stdcall-shaped imports; names `fmod.dll` | User-supplied `fmod.dll` has not been placed in this preserved tree |
-| QHTM import library | `Library/QHTM/QHTM.lib` | Staged | COFF archive; 30 stdcall-shaped imports; names `QHTM.dll` | Paired staged DLL exists; runtime behavior not tested |
-| XWebPage import library | `Library/CWebPage/XWebPage.lib` | Staged | COFF archive; 12 stdcall-shaped imports; names `XWebPage.dll` | User-supplied DLL has not been placed in this preserved tree |
-| RAD static library | `Library/radsdk/radsdk6.lib` | Staged | COFF static archive with 1,556 defined symbols | Exact compiler/CRT provenance remains uncertain |
+| Bink import library | `Library/BinkSDK/binkw32.lib` | Present but inactive | IGA/Bink source is guarded by absent `_ACCLAIM_IGAADSYSTEM` | Remove from future normal-player link line |
+| Bink runtime | `Library/BinkSDK/binkw32.dll` | Not required | Reference EXE has no Bink import | Exclude from normal-player runtime manifest |
+| FMOD import library | `Library/FMod/fmodvc.lib` | Active and paired | All 229 required APIs exist in supplied DLL; FMOD 3.74 header | Retain; DLL awaits runtime-manifest placement and `SR_SOUND.XP` is present |
+| QHTM import library | `Library/QHTM/QHTM.lib` | Active and paired | Exact 16-ordinal DLL match; unconditional initialization and HTML-to-texture calls | Retain for preservation baseline |
+| XWebPage import library | `Library/CWebPage/XWebPage.lib` | Active and paired | Exact 6-function DLL match; active US Rubicon/browser calls | Retain initially; paired DLL awaits runtime-manifest placement |
+| RAD static library | `Library/radsdk/radsdk6.lib` | Present but inactive | All calls are under absent `_ACCLAIM_IGAADSYSTEM`; reference EXE lacks RAD signatures | Remove from normal-player link line; not a normal-player CRT/ABI blocker |
 | DbgHelp import library | `Library/dbghelp.lib` | Staged | COFF archive; names `dbghelp.dll` | Prefer matching historical Windows SDK rather than this file merely existing |
-| SpeedTree import library | linker search path: `SpeedTreeRT.lib` | Candidate only | Candidate import library and supplied DLL match 146/146 exports; wrapper API coverage is exact | Keep quarantined until provenance/licensing and chosen placement are recorded |
-| MP3 decoder static library | `XFControl/mp3decoder.lib` or a configured library directory | Strong candidate located; not promoted | Public candidate is COFF i386, provides all 11 exact stdcall exports, and its three interface headers are byte-identical to the archive | Critical for current `FLASHMP3` configuration; provenance/licensing and CRT treatment remain |
+| SpeedTree import library | linker search path: `SpeedTreeRT.lib` | Technically closed; quarantined | Exact 146/146 DLL match, exact wrapper coverage, reference-matching authorization and complete core packs | Provenance/licensing and controlled placement remain |
+| MP3 decoder static library | `XFControl/mp3decoder.lib` or a configured library directory | Exact-lineage candidate quarantined; not promoted | COFF i386, all 11 exact stdcall exports, three byte-identical headers, and all 19 meaningful diagnostics match reference `XFControl.dll` | Binary/ABI gap closed; proprietary licensing and CRT treatment remain |
 | DirectX 9 SDK libraries | external SDK | Absent from tree, expected externally | Project names `dxguid`, `d3d9`, `d3dx9`, `d3dx9dt`, `dsound`, `dinput8`, `dxerr9`, `d3dxof` | Requires a deliberate legacy DirectX SDK selection |
 | Windows platform libraries | external SDK | Expected externally | Standard Win32 names | Use the preservation toolchain’s compatible Platform SDK |
 
@@ -118,8 +123,9 @@ All four primary US projects select `MultiThreadedDLL` (`/MD`). The main executa
 `XFControl` also carries unusual CRT suppression. The dedicated
 `CRT-LINKER-POLICY-AUDIT.md` establishes that this predates project conversion:
 the original VC6 `.dsp` files contain the same arrangement. The likely intent
-was `/MD` for player code while satisfying static `/MT` objects in
-`mp3decoder.lib` and `radsdk6.lib`. The exact effect of the original quoted
+was `/MD` for player code while satisfying old static objects. The remaining
+demonstrated boundary is `mp3decoder.lib`; `radsdk6.lib` is inactive in the
+normal player. The exact effect of the original quoted
 two-name `/NODEFAULTLIB` argument remains to be proven. Do not “fix” this merely
 by removing whichever diagnostic appears first.
 
@@ -136,44 +142,65 @@ the coherent June 2010 route deliberately omits it and records the deviation.
 
 ### 3. Toolset ABI
 
-The converted projects advertise a modern `v142` route, but the source and proprietary middleware originated in the Visual C++ 6 / early Visual C++ lineage. COFF import libraries are often portable across MSVC generations; static C++ libraries are not automatically so. `radsdk6.lib` is therefore higher ABI risk than plain C import libraries. The preservation route should start with the historically closest viable x86 compiler/toolset, then compare behavior before modernization.
+The converted projects advertise a modern `v142` route, but the source and
+proprietary middleware originated in the Visual C++ 6 / early Visual C++
+lineage. COFF import libraries are often portable across MSVC generations;
+static C++ libraries are not automatically so. The active Flash decoder
+boundary therefore deserves more care than plain C import libraries.
+`radsdk6.lib` would be high ABI risk if enabled, but it is not part of normal
+US player closure. The preservation route should start with the historically
+closest viable x86 compiler/toolset, then compare behavior before modernization.
 
 ### 4. Runtime placement is not link closure
 
-The user has supplied `fmod.dll`, `XWebPage.dll`, `SpeedTreeRT.dll`, `QHTM.dll`, and `binkw32.dll` outside the repository. Runtime DLL availability does not supply missing headers/import libraries/static libraries and does not prove that the staged import library is the correct mate. They should remain evidence inputs until hashed, paired, and placed via a recorded dependency manifest.
+The user supplied `fmod.dll`, `XWebPage.dll`, `SpeedTreeRT.dll`, `QHTM.dll`,
+and `binkw32.dll`. They have since been statically paired against their import
+libraries. Bink is excluded from the normal-player runtime set because its
+feature is inactive; the other four remain runtime-manifest inputs pending
+controlled placement.
 
 ## Current criticality
 
 | Finding | Link impact | Functional impact | Classification |
 |---|---:|---:|---|
-| `mp3decoder.lib` candidate not promoted | Blocks `XFControl` unless supplied through a library path | Flash/UI MP3 playback | 98–100% API/ABI candidate; provenance/CRT decision pending |
-| SpeedTree candidate not promoted | Blocks main link unless a library path supplies it | Vegetation rendering | Strong technical match; provenance decision pending |
-| Legacy DirectX 9 SDK absent | Blocks main link | Renderer/input/audio helpers | Expected external SDK gap |
-| CRT directives contradictory | May cause unresolved/duplicate runtime symbols or unsafe forced resolution | Heap/FILE/exception ownership across modules | Configuration blocker |
+| `mp3decoder.lib` candidate not promoted | Blocks an XFControl source rebuild until an authorized or clean-room implementation is selected | Flash/UI MP3 playback | 99–100% technical lineage; Fraunhofer rights pending; normal US CRT policy reconstructed |
+| SpeedTree candidate not promoted | Blocks main link only until reviewed placement | Vegetation rendering; three localized inferred textures absent | Technical set is 98–99% matched; provenance decision pending |
+| October 2004 VC6 D3DX set quarantined, not promoted | Blocks main link until reviewed placement | Renderer helpers | Exact coherent Microsoft main-SDK plus VC6 Extras set recovered |
+| US `XFControl` CRT text malformed in converted project | Must be normalized before link | Decoder/runtime boundary | Policy resolved as `/MD`, ignore `LIBCMT` only; verbose-link proof pending |
 | Runtime FMOD/XWebPage DLLs not staged | Does not block link | Startup or feature load can fail | Later runtime packaging item |
 | Three inferred tree textures absent | No link effect | Limited missing vegetation texture visuals | Non-blocking data defect |
 
 ## Gate before any controlled build
 
-1. Review the located `playbar/nstest` `mp3decoder.lib` provenance/licensing and decide whether it may be quarantined as a candidate; its declared API comparison is already exact.
+1. Keep the exact-lineage `mp3decoder.lib` quarantined unless documentary
+   authorization is obtained; otherwise plan a clean-room API-compatible
+   decoder adapter.
 2. Record provenance and legal status for the candidate SpeedTree SDK files before promoting them into the player tree.
-3. Acquire and inventory both the official June 2010 DirectX SDK x86
-   maintenance set and a provenance-valid early `d3dx9dt.lib` candidate;
-   keep fidelity and coherent-maintenance link plans separate.
-4. Preserve the identified historical mixed-CRT baseline and obtain an
-   original binary/map/log or later-authorized VC6 linker trace before
-   translating its unusual `/NODEFAULTLIB` semantics.
+3. Review the recovered coherent Microsoft October 2004 main-SDK plus VC6
+   Extras set for controlled placement; keep this fidelity path separate from
+   any June 2010 maintenance path.
+4. Apply the reconstructed US `XFControl` policy only in a gated future patch:
+   `/MD`, ignore `LIBCMT.LIB` only, retain `MSVCRT`, and require verbose-link
+   and map evidence.
 5. Pair every import library to its runtime DLL by DLL identity and complete symbol-set comparison.
 6. Freeze a preservation compiler/linker matrix. Only after that should a controlled build be proposed.
 
 ## Verdict adjustment
 
-Source completeness for the normal player remains high: no additional missing proprietary player `.cpp`, `.h`, or resource was found in this pass. Link readiness is lower because `mp3decoder.lib`, the selected DirectX SDK, SpeedTree promotion, and linker-policy reconstruction remain open. This finding does **not** justify a claim that the client can yet be linked, started, or used correctly.
+Source completeness for the normal player remains high: no additional missing proprietary player `.cpp`, `.h`, or resource was found in this pass. The exact October 2004 VC6 D3DX set is now recovered in quarantine. Link readiness remains gated by reviewed dependency promotion, coherent DirectX companion/header selection, `mp3decoder.lib`, SpeedTree promotion, and linker-policy reconstruction. This finding does **not** justify a claim that the client can yet be linked, started, or used correctly.
+
+A fresh four-project path scan later identified
+`XKernel/XSecurity/XCrypto.Cpp` as absent from the assembled working tree. The
+exact 499-line file is present in the authoritative archive with SHA-256
+`c78a0ce9eb0285c584a34c70ee637397417568cf4c975973cce443933da4160f`.
+This is a fully recoverable assembly omission, not unavailable source. See
+`NORMAL-US-PLAYER-REMAINING-GAPS-LEDGER.md`.
 
 The complete static import-library/runtime pairing results are recorded in
-`RUNTIME-DLL-PAIRING-AUDIT.md`. Bink, FMOD, QHTM, XWebPage and SpeedTreeRT now
-have compatible supplied DLLs at the PE import/export boundary; provenance,
-approved placement and runtime behavior remain separate gates.
+`RUNTIME-DLL-PAIRING-AUDIT.md`. FMOD, QHTM, XWebPage and SpeedTreeRT have
+compatible supplied DLLs at the PE import/export boundary. Bink also pairs
+technically but is not required by normal US Release. Provenance, approved
+placement and runtime behavior remain separate gates.
 
 The frozen preservation and modernization choices are recorded in
 `PRESERVATION-TOOLCHAIN-MATRIX.md`. The primary preservation reference is VC6

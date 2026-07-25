@@ -1,0 +1,65 @@
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets and private credentials
+.env
+.env.local
+.env.*.local
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Editor and IDE user state
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ncb
+*.opt
+*.aps
+
+# Generated Python state
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Visual C++ generated output
+[Dd]ebug/
+[Rr]elease/
+x64/
+obj/
+ipch/
+*.ilk
+*.pch
+*.idb
+*.sbr
+*.tlog
+*.lastbuildstate
+
+# Logs, temporary files, and local backups
+*.log
+*.tmp
+*.temp
+*.bak
+*.bak.*
+*.old
+*.orig
+*~
+
+# Licensed installation media is transferred outside Git.
+*.iso
+*.ISO
+

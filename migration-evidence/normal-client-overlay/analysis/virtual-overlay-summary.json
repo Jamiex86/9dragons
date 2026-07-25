@@ -1,0 +1,45 @@
+{
+  "message_handler_member_definitions": 72,
+  "message_handler_methods_absent_from_recovered_header": [],
+  "overlay_archive_path_collisions": [],
+  "overlay_files": 26,
+  "project_items": 622,
+  "project_items_missing_after_overlay": [
+    "NMClass/ADBalloon.h",
+    "XProcess/XWindow_GMCommand.cpp",
+    "XProcess/XWindow_GMCommand.h",
+    "XProcess/XWindow_GM_EventManager.cpp",
+    "XProcess/XWindow_GM_EventManager.h",
+    "XProcess/XWindow_GM_MonsterManage.cpp",
+    "XProcess/XWindow_GM_MonsterManage.h",
+    "XProcess/XWindow_GM_SendNoticeMessage.cpp",
+    "XProcess/XWindow_GM_SendNoticeMessage.h",
+    "XProcess/XWindow_GM_StatusControl.cpp",
+    "XProcess/XWindow_GM_StatusControl.h",
+    "XProcess/XWindow_GM_UserCoordination.cpp",
+    "XProcess/XWindow_GM_UserCoordination.h"
+  ],
+  "quoted_includes": 176,
+  "quoted_includes_resolved": 170,
+  "quoted_includes_unresolved": [
+    "XWindow_GMCommand.h",
+    "XWindow_GM_SendNoticeMessage.h",
+    "XWindow_GM_StatusControl.h",
+    "XWindow_MnDCurrentPoint.h",
+    "XWindow_MnDTotalPoint.h",
+    "XWindow_NPCMnDInfo.h"
+  ],
+  "unresolved_gm_named_includes": [
+    "XWindow_GMCommand.h",
+    "XWindow_GM_SendNoticeMessage.h",
+    "XWindow_GM_StatusControl.h"
+  ],
+  "us_release_local_linker_inputs": 10,
+  "us_release_local_linker_inputs_resolved": 7,
+  "us_release_local_linker_inputs_unresolved": [
+    "./Library/US/XKernel.lib",
+    "SpeedTreeRT.lib",
+    "./Library/US/XFControl.lib"
+  ],
+  "xproc_maingame_member_names_defined_across_merged_tree": 169
+}

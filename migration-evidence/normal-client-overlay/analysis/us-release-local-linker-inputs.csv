@@ -1,0 +1,11 @@
+linker_input,resolved_path,status
+./Library/US/XGamebase.lib,Library/US/XGamebase.lib,resolved
+./Library/US/XKernel.lib,,unresolved
+SpeedTreeRT.lib,,unresolved
+./Library/dbghelp.lib,Library/dbghelp.lib,resolved
+./Library/US/XFControl.lib,,unresolved
+./Library/QHTM/QHTM.lib,Library/QHTM/QHTM.lib,resolved
+./Library/FMod/fmodvc.lib,Library/FMod/fmodvc.lib,resolved
+./Library/CWebPage/XWebPage.lib,Library/CWebPage/XWebPage.lib,resolved
+./Library/BinkSDK/binkw32.lib,Library/BinkSDK/binkw32.lib,resolved
+./Library/radsdk/radsdk6.lib,Library/radsdk/radsdk6.lib,resolved

@@ -1,0 +1,13 @@
+github_path,category,dependency_partition,size,sha256,archive_identical_elsewhere,archive_same_basename_elsewhere,included_by_count,included_by
+XProcess/XWindow_GM_EventManager.cpp,GM/admin,GM-only root,7004,b8d1660fb709793ee65fdf9117c3f5362b4e5a3265a01bbe6ee26b1b5a1cbc61,,,0,
+XProcess/XWindow_GM_EventManager.h,GM/admin,GM-only root,957,c68dbf6ac042d491a14ba68e4655e764aeaa07f254539829f4e4119bb672782f,,,3,XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GM_EventManager.cpp
+XProcess/XWindow_GM_MonsterManage.cpp,GM/admin,GM-only root,9221,595cfe577077aa3f1302eb70598c31b564637410068f3cccefdc05c0bfe3f6e6,,,0,
+XProcess/XWindow_GM_MonsterManage.h,GM/admin,GM-only root,1103,c4a00a97b23ba5147c88688af732d63e9105114588b0e17bf99a68066b3de031,,,3,XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GM_MonsterManage.cpp
+XProcess/XWindow_GM_SendNoticeMessage.cpp,GM/admin,GM-only root,17834,532fda53243bc5e16644b80508dbf7cb216411c318a54243662797029a394e0c,,,0,
+XProcess/XWindow_GM_SendNoticeMessage.h,GM/admin,GM-only root,1301,0ca20d5fa8c2d7a0d2ef0764b35fb959beacd4c82a572eb09ffb6d2445b92126,,,4,XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGame.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GM_SendNoticeMessage.cpp
+XProcess/XWindow_GM_StatusControl.cpp,GM/admin,GM-only root,12162,2d4b38e24c7004e891d9f8a0970e1e9a7c0627aa9b9ea1396001c8b33f6bd7a4,,,0,
+XProcess/XWindow_GM_StatusControl.h,GM/admin,GM-only root,1012,eeac321d08fa440d309142e4394182a47bd3820efeb304f7675ae5fa57108b5e,,,4,XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGameCallBackFunctions.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GM_StatusControl.cpp
+XProcess/XWindow_GM_UserCoordination.cpp,GM/admin,GM-only root,12049,ca664bcc75b7525ad809e1d7bacfc5fb6456fce3fec7ee859da250ddd17dbbe4,,,0,
+XProcess/XWindow_GM_UserCoordination.h,GM/admin,GM-only root,1297,c32f5185b935625781e07e532aa578e79c0f207c3f7bfff20996f128898b9bb9,,,5,Network/XNetwork.cpp;XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GM_UserCoordination.cpp;XProcess/XWindow_WorldMinimap.cpp
+XProcess/XWindow_GMCommand.cpp,GM/admin,GM-only root,7028,476b26166eb223e44afb31c3a49a11cb2e185f40d4be3cd6c2bf523a85597e31,,,0,
+XProcess/XWindow_GMCommand.h,GM/admin,GM-only root,1392,568cb49e3d42a30584a313eb6e71d0af4599c1c9582edc9a86ee4f7b34601cc1,,,4,XProcess/XProc_FirstLoad.cpp;XProcess/XProc_MainGame.cpp;XProcess/XProc_MainGameMessageHandler.cpp;XProcess/XWindow_GMCommand.cpp

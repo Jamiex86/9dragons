@@ -179,6 +179,63 @@ An early SDK containing `d3dx9dt.lib` may help explain the oldest VC6 project
 history, but it does not match the current version-43 headers. It belongs in a
 separate archival experiment, not the primary recovered-player toolchain.
 
+### Located historical package identities
+
+The safest fidelity candidate is now the **October 2004 DirectX 9.0c SDK plus
+its separately distributed Extras package**. Contemporary reports identify the
+Extras package as carrying the Visual C++ 6-compatible libraries. The main SDK
+identity is independently recorded as:
+
+| Field | October 2004 main SDK |
+|---|---|
+| Filename | `dxsdk_oct2004.exe` |
+| Size | `229,290,240` bytes |
+| SHA-1 | `8097bb69676a20e55a98a67d960a8b6edc89dff9` |
+
+The next-best comparison candidate is:
+
+| Field | December 2004 main SDK |
+|---|---|
+| Filename | `dxsdk_dec2004.exe` |
+| Size | `233,784,600` bytes |
+| SHA-1 | `69f7a521a787c3a914c2dee9489a29235caa7d15` |
+| SHA-256 | `77e4229a8b77768c3e835e5077fa8bfc732d6a1902d040247ba22cdce46cb428` |
+
+The historical filenames `dxsdk_oct2004_extras.exe` and
+`dxsdk_dec2004_extras.exe` are confirmed, but no independently corroborated
+hash for the October Extras package has yet been located. A community-hosted
+copy without a known-good hash is therefore **not approved for promotion**.
+The original Microsoft Download Center identity for the October package is
+family ID `d6f237de-a6ee-4ded-8bb6-139536162eb8`; a contemporary link also
+records Microsoft link token `QYV4F3C`. Collector documentation reports the
+file as approximately `65.252 MB`, but this is not yet an exact byte count.
+Direct Internet Archive CDX queries for the known filename and Microsoft family
+page returned no archived payload record, so the Wayback Machine currently
+does not provide a provenance chain for the executable.
+Any acquired installer must be treated only as an archive: quarantine it,
+verify its whole-file hashes, extract it statically without executing it, and
+inventory the resulting x86 libraries.
+
+Promotion of an extracted `d3dx9dt.lib` requires all of the following:
+
+1. the containing main SDK or Extras package matches an independently recorded
+   Microsoft filename, size, and hash;
+2. the library is x86 COFF and is compatible with the VC6 linker;
+3. its symbol set covers the D3DX calls visible in the source and reference
+   executable;
+4. its embedded strings, object-member timestamps, and D3DX build paths are
+   consistent with the reference executable's `nt32_chk` evidence;
+5. the exact package and extracted-library hashes are recorded in quarantine.
+
+A community-preserved candidate is documented in
+`DIRECTX-D3DX9DT-CANDIDATE-AUDIT.md`. Its exact `nt32_chk` `createmesh.cpp`
+build path matches the supplied reference executable, and uniform 29 September
+2004 member timestamps identify the October release generation at 97–99%
+confidence. However, its required members contain VC7-era security-cookie and
+exception-support references. It is therefore the standard October lineage
+comparison oracle, not an approved substitute for the still-missing
+`Extras\D3dx9 Visual Studio 6` replacement.
+
 ## Gate before a project patch
 
 No dependency was removed in this audit. Before authoring the future patch:

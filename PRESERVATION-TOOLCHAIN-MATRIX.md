@@ -15,8 +15,8 @@ safe behavioral baseline:
 - the original projects use VC6 `/MD`, meaning the historical `MSVCRT` model;
 - `v142 /MD` uses the modern Universal CRT plus `VCRUNTIME140`, not the same
   runtime;
-- the Flash MP3 and RAD static libraries contain VC6-era C++ objects and
-  `LIBCMT` directives;
+- the Flash MP3 static library contains VC6-era objects and `LIBCMT`
+  directives;
 - the surviving runtime DLLs include VC6-era dependencies such as
   `MSVCP60.dll`;
 - C++ layout, exception, standard-library, floating-point optimization, and
@@ -42,33 +42,37 @@ the preservation reference.
 | Optimization | `/O2`, `/Ob1`-equivalent project defaults, function/data settings exactly as emitted by VC6 project | Preserve original Release intent; do not add LTCG |
 | Debug info | `/Zi` on compilation where the US Release project records it; final EXE debug generation remains off | Matches project rather than assuming “Release means no symbols” |
 | CRT for player-owned code | `/MD` | Explicit in all four primary VC6 US Release projects |
-| CRT exceptions | Preserve MP3/RAD `LIBCMT` directives and original link order; no normalization | Required by historical static objects; see CRT audit |
+| CRT exceptions | Apply the reviewed Flash MP3/XFControl `LIBCMT` policy; do not normalize other CRT directives speculatively | Required by historical static objects; see CRT audit |
 | Calling convention | Compiler default (`__cdecl`) except APIs explicitly declared `WINAPI`/`__stdcall` | Matches source and decorated imports |
 | Structure packing | Compiler default x86 packing unless a source-local pragma changes it | No global alternate packing setting was found |
 | Floating point | VC6 defaults; do not add `/fp:fast` or modern equivalents | Avoid changing simulation/render calculations |
-| Windows headers/libs | VC6/period Platform SDK set frozen with the VM; record exact file hashes | Avoid silently mixing current Windows SDK libraries |
-| DirectX SDK | Official DirectX SDK June 2010, x86 include/lib, version `9.29.1962.1` | Included headers are D3DX version 43; Microsoft maintenance baseline |
-| D3DX fidelity route | Validated pre-Feb-2005 `d3dx9dt.lib` followed by `d3dx9.lib` | Reference EXE visibly embeds static debug D3DX |
-| D3DX coherent-maintenance route | June 2010 `d3dx9.lib` and approved `d3dx9_43.dll` redistribution | Matches recovered version-43 headers but differs from reference binary |
+| Windows headers/libs | Microsoft Platform SDK February 2003 Edition, x86 | Microsoft's last VC6-compatible Platform SDK; covers the active Windows 2000-era API target |
+| DirectX SDK | Microsoft DirectX 9.0c SDK (October 2004), x86 headers/libs, with Microsoft's `Extras/D3dx9 Visual Studio 6` replacement libraries | Matches the reference EXE's static D3DX lineage and the VC6 compiler |
+| D3DX preservation route | Complete October 2004 D3DX v22 header family; VC6 Extras `d3dx9dt.lib` followed by matched `d3dx9.lib` | The used API is covered and the matched header/library family avoids an active `ID3DXEffect` vtable mismatch |
+| D3DX modernization route | Complete June 2010 v43 headers, June 2010 `d3dx9.lib`, and legitimate `d3dx9_43.dll`; no `d3dx9dt.lib` | Separate maintenance experiment, not a preservation variant |
 | Output subsystem | Windows GUI, x86 | Original `/subsystem:windows /machine:I386` |
 | Incremental/LTCG | Disabled for the reference Release link | Original final Release does not request LTCG; deterministic full link preferred |
 
-### Important support caveat
+### DirectX coherence requirement
 
-The June 2010 SDK installer did not officially target VC6. This matrix is a
-deliberate hybrid because:
+The preservation route is no longer a June-2010/October-2004 hybrid.
+`D3DX-V22-V43-USED-ABI-DECISION.md` established that the player uses methods
+whose `ID3DXEffect` vtable positions differ between v22 and v43. A mixed build
+could therefore link successfully and still call the wrong methods at runtime.
 
-- the recovered source directly includes version-43 D3DX headers;
-- D3DX import libraries expose a C/COM-style binary surface rather than a
-  C++ standard-library boundary;
-- the source header still contains explicit `_MSC_VER >= 1200` handling;
-- a pre-2005 `d3dx9dt.lib` is less coherent with the recovered header set but
-  is now evidenced in the historical reference binary, requiring a separate
-  fidelity route.
+The frozen preservation family is:
 
-The SDK should be installed only in the isolated image, with include/library
-order recorded. Compatibility must be proven statically before a build is
-authorized.
+- all ten October 2004 `d3dx9*.h` headers, declaring
+  `D3DX_SDK_VERSION 22`;
+- the October 2004 x86 DirectX libraries;
+- Microsoft's October 2004 `Extras/D3dx9 Visual Studio 6` replacements for
+  `d3dx9.lib`, `d3dx9d.lib`, and `d3dx9dt.lib`;
+- `d3dx9dt.lib` before `d3dx9.lib`, as recorded by the original project.
+
+The quarantined coherent set contains 184 main-SDK include files and 50 main
+x86 library files with the three VC6 Extras replacements applied. It remains
+quarantined until provenance and placement review; no installer needs to be
+run to use the statically extracted files in a future isolated VM.
 
 ## Matrix B — converted-project diagnostic baseline
 
@@ -97,7 +101,7 @@ newer compiler.”
 | Compiler | A currently supported MSVC x86 toolset, pinned by exact version |
 | Runtime | One deliberate CRT ownership model per module |
 | Flash MP3 | Replace decoder or isolate it in a VC6-built compatibility DLL |
-| RAD/Bink | Replace, license appropriately, or isolate behind a stable C ABI |
+| RAD/Bink | Keep excluded unless a future product requirement deliberately restores video/advertising behavior |
 | D3DX | Retain Microsoft legacy redist initially, then replace helpers incrementally |
 | SpeedTree | Preserve behind matched DLL ABI or replace renderer/data pipeline as a separate project |
 | Character handling | Keep MBCS initially; Unicode migration requires protocol/data/UI audit |
@@ -110,30 +114,37 @@ Nothing is copied into runtime output folders at this stage.
 
 | Dependency | Controlled source location | Future link/runtime destination |
 |---|---|---|
-| Bink headers/lib | `Library/BinkSDK/` | Link from source tree; approved DLL beside `NineDragons.exe` |
+| Bink/RAD | Historical source evidence only | Excluded from the normal US player; feature guards are inactive |
 | FMOD headers/lib | `Library/FMod/` | Link from source tree; approved `fmod.dll` beside EXE |
 | QHTM header/lib | `Library/QHTM/` | Link from source tree; approved `QHTM.dll` beside EXE |
 | XWebPage header/lib | `Library/CWebPage/` | Link from source tree; approved `XWebPage.dll` beside EXE |
 | SpeedTree | quarantined `candidate-dependencies/SpeedTreeRT/` | Promote only by reviewed manifest; DLL beside EXE |
 | Flash MP3 | quarantined `candidate-dependencies/FlashMP3/` | Future controlled placement where `XFControl` can link it |
-| RAD | `Library/radsdk/` | Static link with historical CRT policy preserved |
-| DirectX | official SDK installation in frozen VM | SDK x86 library path; redistributable runtime manifest |
+| DirectX preservation | quarantined October 2004 coherent VC6 set | Promote complete v22 headers and the matched x86 library family as one hash-pinned unit |
+| DirectX modernization | official June 2010 SDK evidence | Separate v43 experiment only; never place on the preservation search path |
 | Game data | user-supplied `Data` evidence tree | Separate immutable runtime-data snapshot |
 
 ## Path precedence
 
 The controlled environment must print and archive its resolved search order.
-The intended precedence is:
+The intended preservation precedence is:
 
-1. project/source-local headers, including the recovered `XKernel/d3dx9*.h`;
-2. VC6/period Platform SDK headers;
-3. explicitly pinned June 2010 DirectX SDK headers where not supplied locally.
+1. the promoted October 2004 DirectX include directory;
+2. project/source-local headers after the seven local v43 D3DX headers have
+   been removed from resolution or replaced by their hash-pinned v22 forms;
+3. the frozen Platform SDK headers;
+4. VC6 headers.
+
+The preprocessor must prove that every resolved `d3dx9*.h` belongs to the
+October family and that `D3DX_SDK_VERSION` is 22. Path order alone is not
+accepted as proof because quoted includes may prefer the including file's
+directory.
 
 Library resolution must be explicit:
 
 1. recovered internal project outputs;
 2. approved staged/quarantined middleware inputs;
-3. June 2010 DirectX SDK x86 libraries;
+3. October 2004 DirectX SDK x86 libraries with the VC6 Extras D3DX overrides;
 4. frozen VC6/Platform SDK system libraries.
 
 No user-global Visual Studio library directories, current Windows SDK paths, or
@@ -159,13 +170,16 @@ The VM/toolchain evidence bundle must contain:
 
 - legal/provenance decision for SpeedTree and Flash MP3;
 - independently hash all user-supplied runtime DLLs;
-- acquire the official DirectX maintenance SDK and runtime redistribution.
+- preserve the October 2004 main-SDK and VC6-Extras provenance records;
+- keep June 2010 artifacts outside the preservation environment.
 
 ### Before first controlled compilation
 
 - materialize the frozen `VC6-RESTORATION-PATCHSET.md` specification as an
   IDE-generated, reviewable VC6 unified diff;
-- statically validate June 2010 x86 D3DX imports against all client calls;
+- promote the complete hash-pinned October v22 header family and matched VC6
+  library set;
+- define a preprocessor/include-trace check proving version 22 resolution;
 - resolve exact VC6 `/NODEFAULTLIB` argument behavior;
 - freeze and hash the VM.
 
@@ -190,9 +204,9 @@ A linked executable is only an artifact. Separate proof is required for:
 ## Frozen recommendation
 
 **Preservation reference:** VC6 SP6 x86 + original VC6 projects + `/MD`
-player-owned code + explicitly understood static-CRT middleware exceptions.
-DirectX has two frozen variants: validated early static D3DX for historical
-fidelity, and June 2010 D3DX 9.43 for coherent maintenance.
+player-owned code + explicitly understood static-CRT middleware exceptions +
+the complete October 2004 D3DX v22 headers and matched October VC6 libraries.
+There is one preservation DirectX route, not two.
 
-**Modernization reference:** `v142` or later only after the preservation
-artifact and behavior oracle exist.
+**Modernization reference:** `v142` or later with a coherent June 2010 v43
+D3DX family only after the preservation artifact and behavior oracle exist.

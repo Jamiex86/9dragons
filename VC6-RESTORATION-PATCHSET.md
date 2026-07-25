@@ -181,8 +181,13 @@ to:
 ```
 
 This eliminates accidental resolution from a machine-global `LIB` directory.
-The original quoted CRT suppression must remain byte-for-byte unchanged until
-its VC6 behavior is proven.
+In the same gated patch, normalize the active US Release suppression from the
+malformed single item `libcmt.lib msvcrt.lib` to `LIBCMT.LIB` only. The shipped
+reference DLL imports `MSVCRT.dll`, and all peer regional releases suppress
+only `LIBCMT`; see `US-XFCONTROL-CRT-POLICY-RESOLUTION.md`.
+
+The first authorized link must use verbose library tracing and prove that
+`MSVCRT` is selected, `LIBCMT` is ignored, and no CRT-conflict warning occurs.
 
 ### VC6-06 — controlled SpeedTree promotion
 
@@ -212,6 +217,107 @@ After approval:
   `./Library/SpeedTreeRT/SpeedTreeRT.lib` in only the active US Release link
   line;
 - retain the matched DLL for the later runtime manifest, not the link tree.
+
+### VC6-07 — remove inactive RAD/Bink inputs from the normal player
+
+Static source/macro inspection and the reference executable establish that
+RAD/Bink belongs to `_ACCLAIM_IGAADSYSTEM`, which normal `US_Release` does not
+define. Its advertising define is the separate `_ACCLAIM_RUBICONADSYSTEM`.
+
+Remove only from the active normal US Release `# ADD LINK32` line:
+
+```text
+./Library/BinkSDK/binkw32.lib
+./Library/radsdk/radsdk6.lib
+```
+
+Do not delete their files or apply this to a configuration that defines
+`_ACCLAIM_IGAADSYSTEM`. The reference executable imports no `binkw32.dll` and
+contains Rubicon but no distinctive RAD evidence. See
+`US-PLAYER-RAD-BINK-DEAD-LINK-AUDIT.md`.
+
+This also removes RAD as a rationale for explicit `LIBCMT` in the main player.
+Keep `/MD`/`MSVCRT`; determine any remaining `LIBCMT` suppression from active
+dependencies using a later verbose-link trace.
+
+### VC6-08 — retain QHTM and XWebPage
+
+Do not remove `./Library/QHTM/QHTM.lib` or
+`./Library/CWebPage/XWebPage.lib` from the preservation baseline. Both are
+active normal-player dependencies and their supplied DLLs are exact binary
+pairs. See `US-PLAYER-QHTM-XWEBPAGE-ACTIVE-DEPENDENCY-AUDIT.md`.
+
+No project change is required. Runtime placement remains manifest-gated.
+Removing XWebPage later is a behavior change that must also remove every
+browser call, window procedure, and obsolete endpoint assumption.
+
+### VC6-09 — retain FMOD 3.74 interface
+
+Retain `_XUSEFMOD` and `./Library/FMod/fmodvc.lib`. FMOD gates first-load, the
+supplied DLL satisfies every required import, and `Data/Sound/SR_SOUND.XP` is
+present. See `US-PLAYER-FMOD-AUDIO-DEPENDENCY-AUDIT.md`.
+
+No project change is required. Runtime files remain manifest-gated. Do not
+substitute FMOD Ex or FMOD Studio.
+
+### VC6-11 — preserve the Flash/XFControl boundary
+
+Treat `Library/US/XFControl.lib` as a generated XFControl project output, not a
+missing input. Preserve `FLASHMP3` until an authorized original decoder or
+clean-room API-compatible adapter is selected. All normal-US SWFs are present
+in `Data/Script/XSCENESCRIPT.XP`.
+
+The supplied reference DLL is an exact player-facing export match and remains
+the comparison oracle. See
+`US-PLAYER-FLASH-XFCONTROL-END-TO-END-CLOSURE.md`.
+
+### VC6-12 — restore the omitted authoritative XCrypto source
+
+Before any controlled build, restore:
+
+```text
+XKernel\XSecurity\XCrypto.Cpp
+```
+
+from the authoritative archive, requiring SHA-256:
+
+```text
+c78a0ce9eb0285c584a34c70ee637397417568cf4c975973cce443933da4160f
+```
+
+The original `.dsp` and converted `.vcxproj` already list this file. No project
+edit is required. It supplies active packet-crypto initialization code and is
+an assembly omission, not a third-party acquisition. See
+`NORMAL-US-PLAYER-REMAINING-GAPS-LEDGER.md`.
+
+### VC6-13 — select the coherent October D3DX v22 headers
+
+The preservation route must use the complete October 2004 D3DX v22 header
+family with the recovered VC6 libraries. The local v43 `ID3DXEffect` ABI is
+incompatible with the v22 object implementation.
+
+Preserve the current local headers as reference evidence, then make the ten
+October `d3dx9*.h` files the only active D3DX family. Do not mix individual
+versions. Require preprocessed evidence of:
+
+```text
+D3DX_SDK_VERSION 22
+```
+
+Retain October `d3dx9dt.lib` before October `d3dx9.lib`. See
+`D3DX-V22-V43-USED-ABI-DECISION.md`.
+
+### VC6-10 — preserve the matched SpeedTree set as one unit
+
+The candidate header, import library, supplied DLL, reference authorization,
+524-model pack, texture pack, render-style file, and script configuration now
+form a high-confidence lineage set. See
+`US-PLAYER-SPEEDTREE-END-TO-END-CLOSURE.md`.
+
+VC6-06 remains the controlled placement specification. Do not mix another
+SpeedTree header or DLL revision into that patch. The two Crape Myrtle names
+and three inferred missing branch textures remain unchanged pending known-good
+content evidence; they are fidelity issues, not link blockers.
 
 ## Existing source changes reused by VC6
 

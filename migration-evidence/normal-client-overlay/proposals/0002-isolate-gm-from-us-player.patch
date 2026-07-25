@@ -1,0 +1,231 @@
+diff --git a/EmperorOfDragons.vcxproj b/EmperorOfDragons.vcxproj
+index 8f18446..5b58606 100644
+--- a/EmperorOfDragons.vcxproj
++++ b/EmperorOfDragons.vcxproj
+@@ -1428,7 +1428,7 @@
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <WarningLevel>Level3</WarningLevel>
+       <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./HackDetector/HackShield;./HackDetector/GameGuard;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./HackDetector/XTrap;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+-      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <PreprocessorDefinitions>_XPLAYERCLIENT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AssemblerListingLocation>.\Compiled/US/release/EmperorOfDragons\</AssemblerListingLocation>
+       <BrowseInformation>true</BrowseInformation>
+       <PrecompiledHeaderOutputFile>.\Compiled/US/release/EmperorOfDragons\EmperorOfDragons.pch</PrecompiledHeaderOutputFile>
+@@ -2853,12 +2853,24 @@
+     <ClCompile Include="XProcess\XWindow_ExplainCharacter.cpp" />
+     <ClCompile Include="XProcess\XWindow_FreeMatchInfo.cpp" />
+     <ClCompile Include="xprocess\XWindow_Gamble.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GMCommand.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GM_EventManager.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GM_MonsterManage.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GM_SendNoticeMessage.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GM_StatusControl.cpp" />
+-    <ClCompile Include="XProcess\XWindow_GM_UserCoordination.cpp" />
++    <ClCompile Include="XProcess\XWindow_GMCommand.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
++    <ClCompile Include="XProcess\XWindow_GM_EventManager.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
++    <ClCompile Include="XProcess\XWindow_GM_MonsterManage.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
++    <ClCompile Include="XProcess\XWindow_GM_SendNoticeMessage.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
++    <ClCompile Include="XProcess\XWindow_GM_StatusControl.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
++    <ClCompile Include="XProcess\XWindow_GM_UserCoordination.cpp">
++      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++    </ClCompile>
+     <ClCompile Include="xprocess\XWindow_Group.cpp" />
+     <ClCompile Include="XProcess\XWindow_GuideLine.cpp" />
+     <ClCompile Include="xprocess\XWindow_Hedek.cpp" />
+diff --git a/Network/XNetwork.cpp b/Network/XNetwork.cpp
+index 652849d..ea00f38 100644
+--- a/Network/XNetwork.cpp
++++ b/Network/XNetwork.cpp
+@@ -64,7 +64,9 @@
+ #include "XWindow_BlackList.h"
+ #include "XWindow_MixWeapon.h"
+ 
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GM_UserCoordination.h"
++#endif
+ 
+ #ifdef _XTS_ITEMMALLBROWSER	
+ #include "XWindow_CashMall.h"	
+diff --git a/StdAfx.h b/StdAfx.h
+index dd2c194..b849353 100644
+--- a/StdAfx.h
++++ b/StdAfx.h
+@@ -6,6 +6,10 @@
+ #if !defined(AFX_STDAFX_H__A9DB83DB_A9FD_11D0_BFD1_444553540000__INCLUDED_)
+ #define AFX_STDAFX_H__A9DB83DB_A9FD_11D0_BFD1_444553540000__INCLUDED_
+ 
++#if defined(_XPLAYERCLIENT) && (defined(_XGMCLIENT) || defined(_XADMINISTRATORMODE))
++#error GM and administrator modes are forbidden in the normal-player target
++#endif
++
+ #if _MSC_VER > 1000
+ #pragma once
+ #endif // _MSC_VER > 1000
+diff --git a/XProcess/XProc_FirstLoad.cpp b/XProcess/XProc_FirstLoad.cpp
+index 3cff2eb..894335d 100644
+--- a/XProcess/XProc_FirstLoad.cpp
++++ b/XProcess/XProc_FirstLoad.cpp
+@@ -72,12 +72,14 @@
+ #include "XWindow_CashMall.h"
+ #include "XWindow_CashBox.h"
+ // GM Control windows
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GMCommand.h"
+ #include "XWindow_GM_SendNoticeMessage.h"
+ #include "XWindow_GM_UserCoordination.h"
+ #include "XWindow_GM_MonsterManage.h"
+ #include "XWindow_GM_StatusControl.h"
+ #include "XWindow_GM_EventManager.h"
++#endif
+ 
+ #ifdef _XUSEFMOD
+ #include "XFMODWrapper.h"
+@@ -780,11 +782,13 @@ bool XProc_FirstLoad::Process( void )
+ 		return false;
+ 	}
+ 
++#ifndef _XPLAYERCLIENT
+ 	_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+ 	if( pWindow )
+ 	{
+ 		pWindow->UpdateMonsterList();
+ 	}
++#endif
+ 
+ 	SetMessage( _XGETINTERFACETEXT(ID_STRING_FIRSTLOAD_NPCMODEL) );
+ 	Draw();	
+@@ -3534,6 +3538,7 @@ BOOL XProc_FirstLoad::CreateMainInterface( void )
+ 	pEventNotice_Window->SetDocking(FALSE, 0);
+ 	g_MainWindowManager.InsertWindow(pEventNotice_Window);
+ 
++#ifndef _XPLAYERCLIENT
+ 	// GM Command window ==========================================================================
+ 	_XWindow_GMCommand* pGMCommandWindow = new _XWindow_GMCommand;
+ 	_XWINDOW_STRUCTURE gmwindowstruct= 
+@@ -3647,6 +3652,8 @@ BOOL XProc_FirstLoad::CreateMainInterface( void )
+ 	pGMEventManagerWindow->SetPlaySoundEfect( TRUE );
+ 	g_MainWindowManager.InsertWindow(pGMEventManagerWindow);
+ 	
++#endif
++
+ 	// Create Gamble Window =============================================
+ 	_XWindow_Gamble* pGamble_Window = new _XWindow_Gamble;
+ 	_XWINDOW_STRUCTURE gamblestruct =
+diff --git a/XProcess/XProc_MainGame.cpp b/XProcess/XProc_MainGame.cpp
+index b5a0789..7b4232b 100644
+--- a/XProcess/XProc_MainGame.cpp
++++ b/XProcess/XProc_MainGame.cpp
+@@ -163,9 +163,11 @@
+ #include "XWindow_MnDCurrentPoint.h" //Author : ¾çÈñ¿Õ //breif :»çÁ¦ ½Ã½ºÅÛ
+ #endif
+ 
+-// GM Control windows
++// GM Control windows are excluded from the normal-player target.
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GMCommand.h"
+ #include "XWindow_GM_SendNoticeMessage.h"
++#endif
+ 
+ 
+ #include "XParticleList.h"
+@@ -2148,6 +2150,8 @@ void XProc_MainGame::SetUIforRubiconADSystem( void )
+ 	*/
+ 
+ #ifdef _XGMCLIENT
++#ifndef _XPLAYERCLIENT
++#ifndef _XPLAYERCLIENT
+ 	_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);	
+ 	if( pGMCommandWindow )
+ 	{
+@@ -3337,6 +3341,8 @@ bool XProc_MainGame::InitDeviceObject( void )
+ 		_XWindow::m_GlobalPlaySoundEffect = TRUE;
+ 	}
+ 
++#endif
++
+ 	return true;
+ }
+ 
+@@ -20274,7 +20280,8 @@ void XProc_MainGame::InitializeInterface(void)
+ 		}
+ #endif
+ 	}
+-	
++#endif
++
+ 	_XWindow_Option* optionwindow = (_XWindow_Option*)g_MainWindowManager.FindWindow( _XDEF_WTITLE_OPTION );
+ 	if( optionwindow )
+ 	{	
+diff --git a/XProcess/XProc_MainGameCallBackFunctions.cpp b/XProcess/XProc_MainGameCallBackFunctions.cpp
+index 603924a..ff1da1d 100644
+--- a/XProcess/XProc_MainGameCallBackFunctions.cpp
++++ b/XProcess/XProc_MainGameCallBackFunctions.cpp
+@@ -14,7 +14,9 @@
+ #include "XWindow_Skill.h"
+ #include "XWindow_Escape.h"
+ #include "XWindow_MatchPR.h"
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GM_StatusControl.h"
++#endif
+ #include "SoundEffectList.h"
+ #include "XNPCScript.h"
+ #include "XMessageWindow.h"
+diff --git a/XProcess/XProc_MainGameMessageHandler.cpp b/XProcess/XProc_MainGameMessageHandler.cpp
+index f06ebfe..9feb82d 100644
+--- a/XProcess/XProc_MainGameMessageHandler.cpp
++++ b/XProcess/XProc_MainGameMessageHandler.cpp
+@@ -58,12 +58,14 @@
+ #include "XWindow_GuideLine.h"
+ 
+ // GM Control windows
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GMCommand.h"
+ #include "XWindow_GM_SendNoticeMessage.h"
+ #include "XWindow_GM_UserCoordination.h"
+ #include "XWindow_GM_MonsterManage.h"
+ #include "XWindow_GM_StatusControl.h"
+ #include "XWindow_GM_EventManager.h"
++#endif
+ 
+ #include "XNPCScriptConditionItem.h"
+ #include "SoundEffectList.h"
+diff --git a/XProcess/XWindow_WorldMinimap.cpp b/XProcess/XWindow_WorldMinimap.cpp
+index 7525ab4..0737d95 100644
+--- a/XProcess/XWindow_WorldMinimap.cpp
++++ b/XProcess/XWindow_WorldMinimap.cpp
+@@ -12,7 +12,9 @@
+ #include "XWindow_TutorialIcon.h"
+ #include "math.h"
+ #include "XSR_STRINGHEADER.H"
++#ifndef _XPLAYERCLIENT
+ #include "XWindow_GM_UserCoordination.h"
++#endif
+ #include "XWindow_Debug.h"
+ #include "XWindow_NPCSearch.h"
+ #include "Xwindow_Poison.h"
+@@ -2033,6 +2035,7 @@ void _XWindow_WorldMinimap::ProcessDblClick()
+ 						if( zcoord > g_LodTerrain.m_Height -1 )
+ 							zcoord = g_LodTerrain.m_Height -1;
+ 
++#ifndef _XPLAYERCLIENT
+ 						_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+ 						if( pWindow )
+ 						{
+@@ -2047,6 +2050,7 @@ void _XWindow_WorldMinimap::ProcessDblClick()
+ 							pWindow->m_ZCoordIMEControl.ClearBuffer();
+ 							pWindow->m_ZCoordIMEControl.AddString( buffer, strlen(buffer) );
+ 						}
++#endif
+ 					}
+ 				}
+ #ifdef _XDWDEBUG

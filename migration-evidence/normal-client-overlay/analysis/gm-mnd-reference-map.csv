@@ -1,0 +1,131 @@
+path,line,kind,lexical_guards,text
+overlay/XProcess/XProc_MainGame.cpp,12,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,27,GM,#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT),#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+overlay/XProcess/XProc_MainGame.cpp,160,master/disciple,,"#include ""XWindow_NPCMnDInfo.h"" //Author : 양희왕 //breif :사제 시스템"
+overlay/XProcess/XProc_MainGame.cpp,161,master/disciple,,"#include ""XWindow_MnDTotalPoint.h"" //Author : 양희왕 //breif :사제 시스템"
+overlay/XProcess/XProc_MainGame.cpp,162,master/disciple,,"#include ""XWindow_MnDCurrentPoint.h"" //Author : 양희왕 //breif :사제 시스템"
+overlay/XProcess/XProc_MainGame.cpp,165,GM,,"#include ""XWindow_GMCommand.h"""
+overlay/XProcess/XProc_MainGame.cpp,166,GM,,"#include ""XWindow_GM_SendNoticeMessage.h"""
+overlay/XProcess/XProc_MainGame.cpp,2148,GM,#ifdef _ACCLAIM_RUBICONADSYSTEM && #ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,2149,GM,#ifdef _ACCLAIM_RUBICONADSYSTEM && #ifdef _XGMCLIENT,_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,3329,GM,,_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,3360,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,3376,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,3990,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,5356,GM,#else && #ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,5629,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,5661,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,6288,GM,#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE),#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE)
+overlay/XProcess/XProc_MainGame.cpp,8128,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+overlay/XProcess/XProc_MainGame.cpp,9900,master/disciple,,case _XDEF_GROUP_MASTERNDISCIPLETAB :  //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,9901,master/disciple,,case _XDEF_GROUP_MASTERNDISCIPLE_NOTICEWRITE :  //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,9902,master/disciple,,case _XDEF_GROUP_MASTERNDISCIPLE_NOTICEMODIFY : //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,9903,master/disciple,,case _XDEF_GROUP_MASTERNDISCIPLE_WRITEFINISH: //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,9904,master/disciple,,case _XDEF_GROUP_MASTERNDISCIPLE_WRITECANCLE: //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,10246,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+overlay/XProcess/XProc_MainGame.cpp,12803,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,15157,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+overlay/XProcess/XProc_MainGame.cpp,18371,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,18372,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_NPCMnDInfo* pNPCMnDInfo_Window = (_XWindow_NPCMnDInfo*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_NPCMNDWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18373,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pNPCMnDInfo_Window && pNPCMnDInfo_Window->GetShowStatus())
+overlay/XProcess/XProc_MainGame.cpp,18375,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pNPCMnDInfo_Window->ShowWindow(FALSE);
+overlay/XProcess/XProc_MainGame.cpp,18663,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,18664,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_NPCMnDInfo* pNPCMnDInfo_Window = (_XWindow_NPCMnDInfo*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_NPCMNDWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18665,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pNPCMnDInfo_Window && pNPCMnDInfo_Window->GetShowStatus())
+overlay/XProcess/XProc_MainGame.cpp,18667,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pNPCMnDInfo_Window->ShowWindow(FALSE);
+overlay/XProcess/XProc_MainGame.cpp,18670,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDCurrentPoint* pMnDCurrentPoint_Window = (_XWindow_MnDCurrentPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDCURRENTPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18671,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDCurrentPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,18673,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDCurrentPoint_Window->ShowWindow(FALSE);
+overlay/XProcess/XProc_MainGame.cpp,18676,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDTotalPoint* pMnDTotalPoint_Window = (_XWindow_MnDTotalPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDTOTALPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18677,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDTotalPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,18679,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDTotalPoint_Window->ShowWindow(FALSE);
+overlay/XProcess/XProc_MainGame.cpp,18854,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,18855,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDCurrentPoint* pMnDCurrentPoint_Window = (_XWindow_MnDCurrentPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDCURRENTPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18856,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDCurrentPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,18858,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDCurrentPoint_Window->ShowWindow(TRUE);
+overlay/XProcess/XProc_MainGame.cpp,18861,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDTotalPoint* pMnDTotalPoint_Window = (_XWindow_MnDTotalPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDTOTALPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,18862,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDTotalPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,18864,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDTotalPoint_Window->ShowWindow(TRUE);
+overlay/XProcess/XProc_MainGame.cpp,19002,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,19003,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_NPCMnDInfo* pNPCMnDInfo_Window = (_XWindow_NPCMnDInfo*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_NPCMNDWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,19004,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pNPCMnDInfo_Window && pNPCMnDInfo_Window->GetShowStatus())
+overlay/XProcess/XProc_MainGame.cpp,19006,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pNPCMnDInfo_Window->ShowWindow(FALSE);
+overlay/XProcess/XProc_MainGame.cpp,19361,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,19362,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_NPCMnDInfo* pNPCMnDInfo_Window = (_XWindow_NPCMnDInfo*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_NPCMNDWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,19363,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pNPCMnDInfo_Window)
+overlay/XProcess/XProc_MainGame.cpp,19367,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pNPCMnDInfo_Window->ShowWindow(TRUE);
+overlay/XProcess/XProc_MainGame.cpp,19368,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pNPCMnDInfo_Window->SetWindowMoveMode( _XWMOVE_FIXED );
+overlay/XProcess/XProc_MainGame.cpp,19369,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,g_MainWindowManager.SetTopWindow(pNPCMnDInfo_Window);
+overlay/XProcess/XProc_MainGame.cpp,19371,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,"pNPCMnDInfo_Window->MoveWindow( (gnWidth) + m_NPCWindowMoveFast, (gnHeight>>1)-_XDEF_NPCSCRIPT_DRAWPOSY );"
+overlay/XProcess/XProc_MainGame.cpp,20254,GM,,_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,20257,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGame.cpp,20338,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제
+overlay/XProcess/XProc_MainGame.cpp,20339,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDCurrentPoint* pMnDCurrentPoint_Window = (_XWindow_MnDCurrentPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDCURRENTPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,20340,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDCurrentPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,20342,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDCurrentPoint_Window->ShowWindow(TRUE);
+overlay/XProcess/XProc_MainGame.cpp,20345,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,_XWindow_MnDTotalPoint* pMnDTotalPoint_Window = (_XWindow_MnDTotalPoint*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_MNDTOTALPOINTWINDOW);
+overlay/XProcess/XProc_MainGame.cpp,20346,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,if(pMnDTotalPoint_Window)
+overlay/XProcess/XProc_MainGame.cpp,20348,master/disciple,#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER //Author : 양희왕 //breif : 사제,pMnDTotalPoint_Window->ShowWindow(TRUE);
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,17,GM,,"#include ""XWindow_GM_StatusControl.h"""
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,310,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,318,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,322,GM,#ifdef _XGMCLIENT,_XWindow_GM_StatusControl* pWindow = (_XWindow_GM_StatusControl*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERSETTINGWINDOW);
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,346,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+overlay/XProcess/XProc_MainGameCallBackFunctions.cpp,379,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+archive/XProcess/XProc_FirstLoad.cpp,75,GM,,"#include ""XWindow_GMCommand.h"""
+archive/XProcess/XProc_FirstLoad.cpp,76,GM,,"#include ""XWindow_GM_SendNoticeMessage.h"""
+archive/XProcess/XProc_FirstLoad.cpp,77,GM,,"#include ""XWindow_GM_UserCoordination.h"""
+archive/XProcess/XProc_FirstLoad.cpp,78,GM,,"#include ""XWindow_GM_MonsterManage.h"""
+archive/XProcess/XProc_FirstLoad.cpp,79,GM,,"#include ""XWindow_GM_StatusControl.h"""
+archive/XProcess/XProc_FirstLoad.cpp,80,GM,,"#include ""XWindow_GM_EventManager.h"""
+archive/XProcess/XProc_FirstLoad.cpp,783,GM,,_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+archive/XProcess/XProc_FirstLoad.cpp,3538,GM,,_XWindow_GMCommand* pGMCommandWindow = new _XWindow_GMCommand;
+archive/XProcess/XProc_FirstLoad.cpp,3558,GM,,_XWindow_GM_SendNoticeMessage* pGMSendNoticeMessageWindow= new _XWindow_GM_SendNoticeMessage;
+archive/XProcess/XProc_FirstLoad.cpp,3577,GM,,_XWindow_GM_UserCoordination* pGMCoordinateControlWindow = new _XWindow_GM_UserCoordination;
+archive/XProcess/XProc_FirstLoad.cpp,3595,GM,,_XWindow_GM_MonsterManage* pGMMonsterManageWindow = new _XWindow_GM_MonsterManage;
+archive/XProcess/XProc_FirstLoad.cpp,3613,GM,,_XWindow_GM_StatusControl* pGMStatusWindow = new _XWindow_GM_StatusControl;
+archive/XProcess/XProc_FirstLoad.cpp,3632,GM,,_XWindow_GM_EventManager* pGMEventManagerWindow = new _XWindow_GM_EventManager;
+archive/XProcess/XProc_MainGameMessageHandler.cpp,61,GM,,"#include ""XWindow_GMCommand.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,62,GM,,"#include ""XWindow_GM_SendNoticeMessage.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,63,GM,,"#include ""XWindow_GM_UserCoordination.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,64,GM,,"#include ""XWindow_GM_MonsterManage.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,65,GM,,"#include ""XWindow_GM_StatusControl.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,66,GM,,"#include ""XWindow_GM_EventManager.h"""
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13776,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13780,GM,#ifdef _XGMCLIENT,_XWindow_GMCommand* pGMCommandWindow = (_XWindow_GMCommand*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13799,GM,#ifdef _XGMCLIENT,_XWindow_GM_StatusControl* pWindow = (_XWindow_GM_StatusControl*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13808,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pGMCoordinateControlWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13823,GM,#ifdef _XGMCLIENT,_XWindow_GM_SendNoticeMessage* pWindow = (_XWindow_GM_SendNoticeMessage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMNOTICEMESSAGEWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13832,GM,#ifdef _XGMCLIENT,_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13841,GM,#ifdef _XGMCLIENT,_XWindow_GM_EventManager* pWindow = (_XWindow_GM_EventManager*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMEVENTCONTROLWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13856,GM,#ifdef _XGMCLIENT,_XWindow_GM_StatusControl* pWindow = (_XWindow_GM_StatusControl*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13865,GM,#ifdef _XGMCLIENT,_XWindow_GM_StatusControl* pWindow = (_XWindow_GM_StatusControl*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13939,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13948,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13957,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13966,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13986,GM,#ifdef _XGMCLIENT,_XWindow_GM_SendNoticeMessage* pWindow = (_XWindow_GM_SendNoticeMessage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMNOTICEMESSAGEWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,13995,GM,#ifdef _XGMCLIENT,_XWindow_GM_SendNoticeMessage* pWindow = (_XWindow_GM_SendNoticeMessage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMNOTICEMESSAGEWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14010,GM,#ifdef _XGMCLIENT,_XWindow_GM_SendNoticeMessage* pWindow = (_XWindow_GM_SendNoticeMessage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMNOTICEMESSAGEWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14025,GM,#ifdef _XGMCLIENT,_XWindow_GM_SendNoticeMessage* pWindow = (_XWindow_GM_SendNoticeMessage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMNOTICEMESSAGEWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14034,GM,#ifdef _XGMCLIENT,_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14043,GM,#ifdef _XGMCLIENT,_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14061,GM,#ifdef _XGMCLIENT,_XWindow_GM_MonsterManage* pWindow = (_XWindow_GM_MonsterManage*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCONTROLMONSTERWINDOW);
+archive/XProcess/XProc_MainGameMessageHandler.cpp,14075,GM,#ifdef _XGMCLIENT,_XWindow_GM_EventManager* pWindow = (_XWindow_GM_EventManager*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMEVENTCONTROLWINDOW);
+archive/XProcess/XWindow_WorldMinimap.cpp,15,GM,,"#include ""XWindow_GM_UserCoordination.h"""
+archive/XProcess/XWindow_WorldMinimap.cpp,2036,GM,,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/Network/XNetwork.cpp,67,GM,,"#include ""XWindow_GM_UserCoordination.h"""
+archive/Network/XNetwork.cpp,83,GM,#ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+archive/Network/XNetwork.cpp,145,GM,#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT),#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
+archive/Network/XNetwork.cpp,387,GM,#else //#ifdef _XTESTSERVER && #ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+archive/Network/XNetwork.cpp,2460,GM,#ifdef _PD_LOGIN_PACKET_MODE_ && #ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+archive/Network/XNetwork.cpp,2631,GM,#else	// ETC Login && #ifdef _XADMINISTRATORMODE,#ifdef _XADMINISTRATORMODE
+archive/Network/XNetwork.cpp,3071,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+archive/Network/XNetwork.cpp,9867,GM,,//#ifdef _XADMINISTRATORMODE
+archive/Network/XNetwork.cpp,9870,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+archive/Network/XNetwork.cpp,9875,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/Network/XNetwork.cpp,9893,GM,#ifdef _XGMCLIENT,_XWindow_GM_UserCoordination* pWindow = (_XWindow_GM_UserCoordination*)g_MainWindowManager.FindWindow(_XDEF_WTITLE_GMCHARACTERCOORDSETTINGWINDOW);
+archive/Network/XNetwork.cpp,9933,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+archive/Network/XNetwork.cpp,9969,GM,#ifdef _XGMCLIENT,#ifdef _XGMCLIENT
+archive/Network/XNetwork.cpp,10080,GM,#ifdef _XDEF_CLIENT_NEWVERSIONCHECK_071112_KERYGMA// 베트남은 버전 체크 로그용으로 사용s && #if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE),#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
+archive/Network/XNetwork.cpp,10103,GM,#ifdef _XDEF_CLIENT_NEWVERSIONCHECK_071112_KERYGMA // 베트남은 버전 체크 로그용으로 사용 && #if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE),#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)

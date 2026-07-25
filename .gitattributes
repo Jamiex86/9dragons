@@ -1,0 +1,30 @@
+# Preserve Windows project and script line endings.
+*.dsp text eol=crlf
+*.dsw text eol=crlf
+*.mak text eol=crlf
+*.sln text eol=crlf
+*.vcproj text eol=crlf
+*.vcxproj text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.rc text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary preservation inputs.
+*.dll binary
+*.exe binary
+*.lib binary
+*.obj binary
+*.pdb binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ttf binary
+*.woff2 binary
+*.zip binary
+*.rar binary
+*.7z binary
+

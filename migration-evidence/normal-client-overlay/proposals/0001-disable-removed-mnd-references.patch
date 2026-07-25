@@ -1,0 +1,28 @@
+--- a/XProcess/XProc_MainGame.cpp
++++ b/XProcess/XProc_MainGame.cpp
+@@ -157,9 +157,11 @@
+ #include "XWindow_RecallItem.h" //Author : æÁ»Òø’
+ #include "XWindow_SocketDetach.h" //Author : æÁ»Òø’
+ #include "XWindow_EventIcon.h" //Author : æÁ»Òø’
++#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER
+ #include "XWindow_NPCMnDInfo.h" //Author : æÁ»Òø’ //breif :ªÁ¡¶ Ω√Ω∫≈€
+ #include "XWindow_MnDTotalPoint.h" //Author : æÁ»Òø’ //breif :ªÁ¡¶ Ω√Ω∫≈€
+ #include "XWindow_MnDCurrentPoint.h" //Author : æÁ»Òø’ //breif :ªÁ¡¶ Ω√Ω∫≈€
++#endif
+ 
+ // GM Control windows
+ #include "XWindow_GMCommand.h"
+@@ -9897,11 +9899,13 @@
+ 		case _XDEF_GROUP_CASTLEBATTLE_WARSITUATIONTAB:
+ 		case _XDEF_GROUP_ALIENCE_BTN_GOTOORGANIZATION	:
+ 		case _XDEF_GROUP_ALIENCE_BTN_GOTOALIENCE:
++#ifdef _XDEF_MASTER_AND_DISCIPLE_080721_MAGVIPER
+ 		case _XDEF_GROUP_MASTERNDISCIPLETAB :  //Author : æÁ»Òø’ //breif : ªÁ¡¶
+ 		case _XDEF_GROUP_MASTERNDISCIPLE_NOTICEWRITE :  //Author : æÁ»Òø’ //breif : ªÁ¡¶
+ 		case _XDEF_GROUP_MASTERNDISCIPLE_NOTICEMODIFY : //Author : æÁ»Òø’ //breif : ªÁ¡¶
+ 		case _XDEF_GROUP_MASTERNDISCIPLE_WRITEFINISH: //Author : æÁ»Òø’ //breif : ªÁ¡¶
+ 		case _XDEF_GROUP_MASTERNDISCIPLE_WRITECANCLE: //Author : æÁ»Òø’ //breif : ªÁ¡¶
++#endif
+ 			OrganizationWindowMessageHandling(wparam, lparam);
+ 			break;
+ 		case _XDEF_GAMBLE_OPEN :

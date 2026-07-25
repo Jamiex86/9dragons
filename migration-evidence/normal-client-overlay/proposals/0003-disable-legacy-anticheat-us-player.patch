@@ -1,0 +1,209 @@
+diff --git a/DataStructure/Notice/XNoticeProcess.cpp b/DataStructure/Notice/XNoticeProcess.cpp
+index aef38d9..568e40c 100644
+--- a/DataStructure/Notice/XNoticeProcess.cpp
++++ b/DataStructure/Notice/XNoticeProcess.cpp
+@@ -20,7 +20,7 @@
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) 
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 	#endif
+diff --git a/EmperorOfDragons.cpp b/EmperorOfDragons.cpp
+index ec8b9f2..9b503e2 100644
+--- a/EmperorOfDragons.cpp
++++ b/EmperorOfDragons.cpp
+@@ -121,7 +121,7 @@ LONG				g_ModuleFileSize = 0;
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_HACKSHEILD
+ 		#define _XUSE_HACKSHEILD		
+ 	#else
+diff --git a/EmperorOfDragons.vcxproj b/EmperorOfDragons.vcxproj
+index 5b58606..f583968 100644
+--- a/EmperorOfDragons.vcxproj
++++ b/EmperorOfDragons.vcxproj
+@@ -1427,8 +1427,8 @@
+       <Optimization>MaxSpeed</Optimization>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <WarningLevel>Level3</WarningLevel>
+-      <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./HackDetector/HackShield;./HackDetector/GameGuard;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./HackDetector/XTrap;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+-      <PreprocessorDefinitions>_XPLAYERCLIENT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <AdditionalIncludeDirectories>./;./XGamebase/Include;./XGamebase/Include/Template;./XKernel;./XProcess;./DataStructure;./XControl;./Utility;./Network;./MeshControl;./ObjectControl;./PathFinding;./Effect/Particle;./Effect/Script;./Script;./XSound;./Filtering;./XGamebase/src/libs/jpeg;./XSTreeWrapper;./XParticleCore;./XFControl;./Library;./Library/QHTM;./Library/FMod;./XMADWrapper;./NMClass;./XIGAADWrapper;./Library/radsdk;./Library/BinkSDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <PreprocessorDefinitions>_XPLAYERCLIENT;_XPLAYER_NO_LEGACY_ANTICHEAT;NDEBUG;WIN32;_WINDOWS;NOUSE_VORBIS;NOUSE_WMA;_XUSEFMOD;_XNOCHECKMEMORYUSAGE;_XESTABLISHEDSERVER;_NEW_TYPE;_ACCLAIM_VERSION;_XENGLISH;_ACCLAIM_RUBICONADSYSTEM;_X_US_EXPANDSERVERLIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AssemblerListingLocation>.\Compiled/US/release/EmperorOfDragons\</AssemblerListingLocation>
+       <BrowseInformation>true</BrowseInformation>
+       <PrecompiledHeaderOutputFile>.\Compiled/US/release/EmperorOfDragons\EmperorOfDragons.pch</PrecompiledHeaderOutputFile>
+@@ -2689,7 +2689,9 @@
+     <ClCompile Include="Network\XNetwork_PKPenalty.cpp" />
+     <ClCompile Include="network\XNetwork_quest.cpp" />
+     <ClCompile Include="Network\XNetwork_UniGroupLobby.cpp" />
+-    <ClCompile Include="Network\XNetwork_XTrap.cpp" />
++<ClCompile Include="Network\XNetwork_XTrap.cpp">
++  <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='US_Release|Win32'">true</ExcludedFromBuild>
++</ClCompile>
+     <ClCompile Include="NMClass\NMFiles.cpp" />
+     <ClCompile Include="Script\XCollectionItem.cpp" />
+     <ClCompile Include="Script\XCollectionManager.cpp" />
+diff --git a/Network/XNetwork.cpp b/Network/XNetwork.cpp
+index ea00f38..6cbfee0 100644
+--- a/Network/XNetwork.cpp
++++ b/Network/XNetwork.cpp
+@@ -144,7 +144,7 @@
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 	
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 		extern struct MSG_GGAUTH g_GameGuardData;
+@@ -10079,7 +10079,7 @@ BOOL _XNetwork::SendPacket( int type, int param1, int param2, int param3, int pa
+ 				extern LONG g_ModuleFileSize;
+ 
+ 				// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
+-				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)  
++				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
+ 
+ 				if( g_ModuleFileSize < 2500000 ) // 모듈 파일 사이즈가 정상일때는 버전 정상으로 보냄.
+ 				{
+@@ -10102,7 +10102,7 @@ BOOL _XNetwork::SendPacket( int type, int param1, int param2, int param3, int pa
+ 				extern LONG g_ModuleFileSize;
+ 
+ 				// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
+-				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) 
++				#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
+ 
+ 				if( g_ModuleFileSize < 2500000 ) // 모듈 파일 사이즈가 정상일때는 버전 정상으로 보냄.
+ 				{
+diff --git a/Network/packet_for_ctrl_gms.h b/Network/packet_for_ctrl_gms.h
+index 0fce21f..4242798 100644
+--- a/Network/packet_for_ctrl_gms.h
++++ b/Network/packet_for_ctrl_gms.h
+@@ -277,7 +277,7 @@ struct MSG_SVRINFO_PK_ZONE : public MSG_SERVER_INFO
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 		#include "NPGameLib.h"
+diff --git a/StdAfx.h b/StdAfx.h
+index b849353..5cdcea7 100644
+--- a/StdAfx.h
++++ b/StdAfx.h
+@@ -10,6 +10,10 @@
+ #error GM and administrator modes are forbidden in the normal-player target
+ #endif
+ 
++#if defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && (defined(_XUSE_GAMEGUARD) || defined(_XUSE_HACKSHEILD) || defined(_XUSE_XTRAP) || defined(_XUSEAPEXMODULE) || defined(_XDEF_MEMORYHACKDEFENCE) || defined(_XDEF_DETECTSPEEDHACK))
++#error Legacy anti-cheat is forbidden in the normal-player target
++#endif
++
+ #if _MSC_VER > 1000
+ #pragma once
+ #endif // _MSC_VER > 1000
+diff --git a/XKernel/XApplication/X3DApp.cpp b/XKernel/XApplication/X3DApp.cpp
+index c22ff12..bc3b492 100644
+--- a/XKernel/XApplication/X3DApp.cpp
++++ b/XKernel/XApplication/X3DApp.cpp
+@@ -48,7 +48,7 @@ static void			_XLogDeviceInfos(void);
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_HACKSHEILD
+ 		#define _XUSE_HACKSHEILD
+ 	#else
+diff --git a/XKernel/XApplication/XKernel.cpp b/XKernel/XApplication/XKernel.cpp
+index c3310a7..d10397f 100644
+--- a/XKernel/XApplication/XKernel.cpp
++++ b/XKernel/XApplication/XKernel.cpp
+@@ -95,7 +95,7 @@ BOOL CheckExistFile( LPCSTR filename, BOOL resetAttrib )
+ 	#pragma message( "undefine game guard : apex module." )
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_HACKSHEILD
+ 		#define _XUSE_HACKSHEILD
+ 	#else
+@@ -1524,7 +1524,7 @@ int __stdcall WinMain(HINSTANCE hI, HINSTANCE hP, TCHAR *Cmd, int nShow)
+ 		_XLog( "Begin kernel." );
+ 
+ 		// 일본은 gameguard basic license라서 실행파일 압축 사용 안함.
+-		#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) 
++		#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE)
+ 
+ 		LPCTSTR pModuleFilename = _XArgv(0);
+ 		if( pModuleFilename )
+diff --git a/XKernel/XKernel.vcxproj b/XKernel/XKernel.vcxproj
+index e9763a5..b341fdd 100644
+--- a/XKernel/XKernel.vcxproj
++++ b/XKernel/XKernel.vcxproj
+@@ -818,8 +818,8 @@
+       <Optimization>MaxSpeed</Optimization>
+       <SuppressStartupBanner>true</SuppressStartupBanner>
+       <WarningLevel>Level3</WarningLevel>
+-      <AdditionalIncludeDirectories>./;.././;./../XGamebase/Include;./../XGamebase/src/libs/jpeg;./../XGamebase/Include/Template;../HackDetector/HackShield;../HackDetector/GameGuard;../HackDetector/XTrap;../MeshControl;../XParticleCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+-      <PreprocessorDefinitions>NDEBUG;WIN32;_LIB;_ACCLAIM_VERSION;_XENGLISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
++      <AdditionalIncludeDirectories>./;.././;./../XGamebase/Include;./../XGamebase/src/libs/jpeg;./../XGamebase/Include/Template;../MeshControl;../XParticleCore;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
++      <PreprocessorDefinitions>_XPLAYER_NO_LEGACY_ANTICHEAT;NDEBUG;WIN32;_LIB;_ACCLAIM_VERSION;_XENGLISH;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+       <AssemblerListingLocation>.\../Compiled/US/release/XKernel\</AssemblerListingLocation>
+       <BrowseInformation>true</BrowseInformation>
+       <PrecompiledHeaderOutputFile>.\../Compiled/US/release/XKernel\XKernel.pch</PrecompiledHeaderOutputFile>
+diff --git a/XProcess/XProc_MainGame.cpp b/XProcess/XProc_MainGame.cpp
+index 7b4232b..ba8defa 100644
+--- a/XProcess/XProc_MainGame.cpp
++++ b/XProcess/XProc_MainGame.cpp
+@@ -24,7 +24,7 @@
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 	#endif
+@@ -6293,7 +6293,7 @@ if( g_pLocalUser->m_CharacterInfo.Get_gm_level() == 0 )
+ #endif
+ 
+ // 일본은 GameGuard basic license 이므로 실행파일 압축을 사용 안하므로 파일 사이즈 체크를 안함.
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE) 
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT) && !defined(_XJAPANESE) && !defined(_XRUSSIAN) && !defined(_XVIETNAMESE) && !defined(_XTAIWANESE)
+ 
+ 	static DWORD iCurrentThirdCheckTime = 0;
+ 
+diff --git a/XProcess/XProc_SelectCharacter.cpp b/XProcess/XProc_SelectCharacter.cpp
+index d5b58a1..a060979 100644
+--- a/XProcess/XProc_SelectCharacter.cpp
++++ b/XProcess/XProc_SelectCharacter.cpp
+@@ -32,7 +32,7 @@
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 	#endif
+diff --git a/XProcess/XWindow_Login.cpp b/XProcess/XWindow_Login.cpp
+index f157472..0046547 100644
+--- a/XProcess/XWindow_Login.cpp
++++ b/XProcess/XWindow_Login.cpp
+@@ -24,7 +24,7 @@
+ 	#undef _XENABLE_GAMEGUARD
+ #endif
+ 
+-#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT)
++#if !defined(_XDWDEBUG) && !defined(_XADMINISTRATORMODE) && !defined(_DEBUG) && !defined(_XGMCLIENT) && !defined(_XPLAYER_NO_LEGACY_ANTICHEAT)
+ 	#ifdef _XENABLE_GAMEGUARD
+ 		#define _XUSE_GAMEGUARD
+ 	#endif

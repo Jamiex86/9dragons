@@ -1,0 +1,170 @@
+definition_file,definition_line,method,definition_parameter_count,definition_parameters,definition_const,header_declaration_count,matching_arity_and_const,header_candidate_parameters
+XProc_MainGame.cpp,530,XProc_MainGame,0,,no,1,yes,
+XProc_MainGame.cpp,635,LoadInformationString,0,void,no,1,yes,void
+XProc_MainGame.cpp,722,InitializeProcess,0,void,no,1,yes,void
+XProc_MainGame.cpp,2060,SetUIforRubiconADSystem,0,void,no,1,yes,void
+XProc_MainGame.cpp,2304,ProcessPCRoomConnectNotice,0,void,no,1,yes,void
+XProc_MainGame.cpp,2334,ProcessBgmTimer,0,void,no,1,yes,void
+XProc_MainGame.cpp,2348,SetSpecialBGMPlay,2,"LPTSTR filename, BOOL loop ) #else void XProc_MainGame::SetSpecialBGMPlay( LPTSTR filename ) #endif { g_BgmPlayFlag = FALSE; #ifdef _XDEF_NEWSPECIALBGMPROCESS_071123_KERYGMA m_PreviousBGMPlayFlag = g_BgmPlayFlag; m_SpecialBGMLoopPlayFlag = loop; #endif _XWindow_Option* optionwindow = (_XWindow_Option*)g_MainWindowManager.FindWindow( _XDEF_WTITLE_OPTION ); if( optionwindow",no,2,yes,"LPTSTR filename, BOOL loop = FALSE | LPTSTR filename"
+XProc_MainGame.cpp,2398,StopSpecialBGMPlay,0,void,no,1,yes,void
+XProc_MainGame.cpp,2407,ProcessChangeBgm,0,void,no,1,yes,void
+XProc_MainGame.cpp,2638,SendSignal_ProcessStop,0,void,no,1,yes,void
+XProc_MainGame.cpp,2649,ProcessLocalUserDie,0,void,no,1,yes,void
+XProc_MainGame.cpp,2708,Process_ProcessStop,0,void,no,1,yes,void
+XProc_MainGame.cpp,2777,Process_GameExit,0,void,no,1,yes,void
+XProc_MainGame.cpp,2849,OnMCINotify,3,"UINT message, WPARAM wparam, LPARAM lparam",no,1,yes,"UINT message, WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,2853,OnWindowSizeChangeNotify,0,void,no,1,yes,void
+XProc_MainGame.cpp,2911,DestroyProcess,0,void,no,1,yes,void
+XProc_MainGame.cpp,3305,InitDeviceObject,0,void,no,1,yes,void
+XProc_MainGame.cpp,3341,ReleaseDeviceObject,0,void,no,1,yes,void
+XProc_MainGame.cpp,3348,PauseProcess,0,void,no,1,yes,void
+XProc_MainGame.cpp,3353,UnPauseProcess,0,void,no,1,yes,void
+XProc_MainGame.cpp,3358,Draw,0,void,no,1,yes,void
+XProc_MainGame.cpp,5543,OnPaint,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,5548,DrawPickedObjectInfoTooltip,0,void,no,1,yes,void
+XProc_MainGame.cpp,5626,Process,0,void,no,1,yes,void
+XProc_MainGame.cpp,6889,DrawInterface,0,void,no,1,yes,void
+XProc_MainGame.cpp,7320,ProcessInformationSystem,0,void,no,1,yes,void
+XProc_MainGame.cpp,7442,ProcessInterface,0,void,no,1,yes,void
+XProc_MainGame.cpp,7615,StartNPCScript,0,void,no,1,yes,void
+XProc_MainGame.cpp,7766,StartFunctionalObjectScript,0,void,no,1,yes,void
+XProc_MainGame.cpp,7813,SetMovetoMousePickedPoint,0,void,no,1,yes,void
+XProc_MainGame.cpp,7891,LoadTerrain,1,LPSTR Filename,no,1,yes,LPSTR Filename
+XProc_MainGame.cpp,7907,InitializeRenderState,0,void,no,1,yes,void
+XProc_MainGame.cpp,7982,InitializeLight,0,void,no,1,yes,void
+XProc_MainGame.cpp,7992,DrawDebugState,0,void,no,1,yes,void
+XProc_MainGame.cpp,8103,GetVectorFromMousePos,3,"POINT& pt, D3DXVECTOR3& raydir, D3DXVECTOR3& rayorg",no,1,yes,"POINT& pt, D3DXVECTOR3& raydir, D3DXVECTOR3& rayorg"
+XProc_MainGame.cpp,8124,GetMousePosition,0,void,no,1,yes,void
+XProc_MainGame.cpp,8147,MessageProc,3,"UINT message, WPARAM wparam, LPARAM lparam",no,1,yes,"UINT message, WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,10234,OnKeyboardPoll,1,_XInput *pInput,no,1,yes,_XInput *pInput
+XProc_MainGame.cpp,10394,OnKeyUp,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,11267,OnKeyDown,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,14481,OnMousePoll,2,"MouseState *pState, ScrnPos *pPos",no,1,yes,"MouseState *pState, ScrnPos *pPos"
+XProc_MainGame.cpp,14559,OnMouseButton,2,"_XMouseButton p_MB, bool bPushed",no,1,yes,"_XMouseButton p_MB, bool bPushed"
+XProc_MainGame.cpp,14690,OnMouseWheel,1,short zDelta,no,1,yes,short zDelta
+XProc_MainGame.cpp,14717,OnMouseLBtnDblClick,1,WPARAM wparam,no,1,yes,WPARAM wparam
+XProc_MainGame.cpp,14943,OnMouseRBtnDblClick,1,WPARAM wparam,no,1,yes,WPARAM wparam
+XProc_MainGame.cpp,14999,OnMouseMBtnDblClick,1,WPARAM wparam,no,1,yes,WPARAM wparam
+XProc_MainGame.cpp,15004,OnUserMessage_Socket,3,"UINT message, WPARAM wparam, LPARAM lparam",no,1,yes,"UINT message, WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,15104,OnUserMessage_MessengerSocket,3,"UINT message, WPARAM wparam, LPARAM lparam",no,1,yes,"UINT message, WPARAM wparam, LPARAM lparam"
+XProc_MainGame.cpp,15158,ProcRenderStateCommand,1,LPSTR commandstring,no,1,yes,LPSTR commandstring
+XProc_MainGame.cpp,15165,DrawFadeInOut,0,void,no,1,yes,void
+XProc_MainGame.cpp,15197,CheckTextureUseHitrate,0,void,no,1,yes,void
+XProc_MainGame.cpp,15281,DrawQuestWideView,0,void,no,1,yes,void
+XProc_MainGame.cpp,15326,RepositionTopBottomVertex,0,void,no,1,yes,void
+XProc_MainGame.cpp,15335,SelectSkill,2,"short skillid, BOOL keydown",no,1,yes,"short skillid, BOOL keydown = TRUE"
+XProc_MainGame.cpp,15662,ChangeToActive,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,15775,ChangeToChanneling,2,"short skillid, BOOL keydown",no,1,yes,"short skillid, BOOL keydown"
+XProc_MainGame.cpp,15844,ChangeToHiddenMA,2,"short skillid, BOOL keydown",no,1,yes,"short skillid, BOOL keydown"
+XProc_MainGame.cpp,15877,ChangeToOther,2,"short skillid, BOOL keydown",no,1,yes,"short skillid, BOOL keydown"
+XProc_MainGame.cpp,15965,ChangeToPassive,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16003,CheckValidSkillActive,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16042,CheckValidSkillChanneling,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16140,CheckValidSkillHiddenMA,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16180,CheckValidSkillOther,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16274,CheckValidSkillPassive,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16300,CheckDelayTime,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,16327,DrawNPCDialogWideView,0,,no,1,yes,
+XProc_MainGame.cpp,17006,DrawNPCFadeInOut,0,,no,1,yes,
+XProc_MainGame.cpp,17098,DrawFunctionalObjectWideView,0,,no,1,yes,
+XProc_MainGame.cpp,17458,DrawFunctionalObjectFadeInOut,0,,no,1,yes,
+XProc_MainGame.cpp,17541,ProcessNPCScriptAutoPopUp,0,void,no,1,yes,void
+XProc_MainGame.cpp,17639,DrawDyingState,0,void,no,1,yes,void
+XProc_MainGame.cpp,17766,DrawComaState,0,void,no,1,yes,void
+XProc_MainGame.cpp,18060,ProcessDyingState,0,void,no,1,yes,void
+XProc_MainGame.cpp,18127,ProcessComaState,0,void,no,1,yes,void
+XProc_MainGame.cpp,18212,ResetData,0,,no,1,yes,
+XProc_MainGame.cpp,18464,WindowCloseBeforeWideView,0,,no,1,yes,
+XProc_MainGame.cpp,18685,BaseInterfaceWindowOpen,0,,no,1,yes,
+XProc_MainGame.cpp,18870,SetNPCMode,1,_XNPC_MODE npcmode,no,1,yes,_XNPC_MODE npcmode
+XProc_MainGame.cpp,19011,DrawNPCWindowMove,0,,no,1,yes,
+XProc_MainGame.cpp,19386,InitializeTraining,0,void,no,1,yes,void
+XProc_MainGame.cpp,19611,CheckBossMap,1,int targetzoneindex,no,1,yes,int targetzoneindex
+XProc_MainGame.cpp,19615,SetEnterBossBattleRoom,0,void,no,1,yes,void
+XProc_MainGame.cpp,19662,SetExitBossBattleRoom,0,void,no,1,yes,void
+XProc_MainGame.cpp,19970,SetEnterVirtualSpace,0,void,no,1,yes,void
+XProc_MainGame.cpp,19987,SetLeaveVirtualSpace,0,void,no,1,yes,void
+XProc_MainGame.cpp,20194,InitializeInterface,0,void,no,1,yes,void
+XProc_MainGame.cpp,20353,CheckLandMarkPoint,0,void,no,1,yes,void
+XProc_MainGame.cpp,20421,CheckTargetType,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,20672,CheckReqCondition,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,20871,CheckReqItem,1,short skillid,no,1,yes,short skillid
+XProc_MainGame.cpp,21102,SaveTutorialInfo,0,void,no,1,yes,void
+XProc_MainGame.cpp,21150,LoadTutorialInfo,0,void,no,1,yes,void
+XProc_MainGame.cpp,21228,LoadEventNoticeInfo,0,void,no,1,yes,void
+XProc_MainGame.cpp,21367,SaveEventNoticeInfo,0,void,no,1,yes,void
+XProc_MainGame.cpp,21445,CloseNPCScriptWindow,0,,no,1,yes,
+XProc_MainGame.cpp,21616,DrawGraphLog,0,void,no,1,yes,void
+XProc_MainGame.cpp,21796,ProcessBilling,0,void,no,1,yes,void
+XProc_MainGameMessageHandler.cpp,832,InventoryMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,1192,PartyWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2238,QuestWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2414,SkillWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2472,FSWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2477,QuickSlotMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2752,OptionMenuWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,2951,OptionWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,3658,ChatWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,4100,DebugWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,4132,CIWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,4290,MinimapWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,4674,NPCScriptWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,6881,NPCTradeWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,7006,TradeConfirmWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,7787,RequestPartyWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,8436,SystemMenuWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,8920,WarehouseWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,9322,AddSaveItemWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,9656,PCTradeWindowMessageHanlding,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,9733,MessengerWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,9899,EmailWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10056,MessengerDialogWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10186,QuestMailWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10247,TutorialDialogWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10258,MessengerTooltipWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10509,NameInputWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10814,NPCSkillWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,10987,RebirthWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,11162,RepairItemWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,11589,MeditationMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,11608,TrainingMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,11926,EnterBossRoomMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12107,NickNameMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12195,MatchWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12556,MatchTablePVPWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12709,MatchNoticeWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12725,MatchPRWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12901,MatchRecordWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,12943,SocketPlugInWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13095,SocketPlugInExpandWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13119,PocketWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13146,TargetInfoWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13562,MainFrameWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13643,MasterySkillWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13673,ContributionMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13729,TutorialIconMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13735,HelpBookMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,13774,GMCommandMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,14193,OrganizationWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,14785,GambleBoxWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,14905,PersonalStoreWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,15549,LifeSkillWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16071,EventWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16243,CashItemWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16284,NPCCollectionWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16433,NPCResourceWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16496,NewNPCResourceWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16568,InchantWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16613,NPCBuffWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16712,PKRecordWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16732,CashItemUseMesssageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16755,MoveVillageWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,16830,CastleWarWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,17175,PKTracingRequestWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,17496,CashItemBoxWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,17981,SmeltItemWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,18065,BlackListWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,18147,NewWorldMapWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,18249,RecallItemWIndowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,18436,SocketDetachWIndowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"
+XProc_MainGameMessageHandler.cpp,18492,MixWeaponWindowMessageHandling,2,"WPARAM wparam, LPARAM lparam",no,1,yes,"WPARAM wparam, LPARAM lparam"

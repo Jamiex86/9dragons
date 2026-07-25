@@ -1,0 +1,29 @@
+{
+  "archive_files": 3810,
+  "archive_only_case_insensitive_paths": 2186,
+  "case_path_differences": 17,
+  "github_files": 3772,
+  "github_only_case_insensitive_paths": 2148,
+  "github_only_categories": {
+    "GM/admin": 12,
+    "generated/build artifact": 600,
+    "launcher/patcher": 369,
+    "normal player/game process": 42,
+    "normal/shared source": 105,
+    "resource/config/other": 145,
+    "shared engine/internal library": 22,
+    "third-party/middleware": 853
+  },
+  "github_only_dependency_partition": {
+    "GM-only root": 12,
+    "normal player dependency": 853,
+    "shared by GM and normal": 6,
+    "unclassified/non-code": 1277
+  },
+  "shared_case_insensitive_paths": 1624,
+  "shared_status": {
+    "byte-identical": 94,
+    "content-different": 369,
+    "text-identical (encoding/EOL differs)": 1161
+  }
+}

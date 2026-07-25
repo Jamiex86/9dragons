@@ -111,8 +111,15 @@ Verdict: **exact binary pair**.
   42/42 called methods and 31/31 directly accessed fields are covered.
 - DLL PE timestamp: 2006-01-18 00:47:03.
 
-Verdict: **exact import/DLL pair and very strong wrapper fit**; provenance and
-SpeedTree authorization remain separate gates.
+The active authorization material is byte-identical to the value embedded in
+the supplied reference executable (full-value SHA-256
+`95b4b17918ebd2b167f6bbd95a601f996d7029b3eaef2f7f5568ac5f311d02a4`).
+The expected data packs also parse cleanly as 524 `.spt` models and 144
+textures; see `SPEEDTREE-AUTHORIZATION-DATA-AUDIT.md`.
+
+Verdict: **exact import/DLL pair, very strong wrapper fit, and matching
+reference authorization/data generation**. Runtime behavior and
+licensing/provenance remain separate gates.
 
 ## Runtime placement status
 
@@ -147,4 +154,3 @@ declared import/export surfaces. Remaining pre-build blockers are now:
 3. selection of the historical DirectX 9 SDK and resolution of
    `d3dx9dt.lib`;
 4. a frozen preservation compiler/linker matrix.
-
