@@ -63,3 +63,8 @@ ipch/
 *.iso
 *.ISO
 
+# Guest-local preservation build state.
+vm-build-kit/guest/local-paths.cmd
+vm-build-kit/guest/evidence/
+vm-build-kit/guest/build-logs/
+
