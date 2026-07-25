@@ -2371,7 +2371,6 @@
     <ClInclude Include="Network\XMD5Global.h" />
     <ClInclude Include="Network\XNetwork.h" />
     <ClInclude Include="Network\XNetworkDefine.h" />
-    <ClInclude Include="NMClass\ADBalloon.h" />
     <ClInclude Include="NMClass\NMCOClientObject.h" />
     <ClInclude Include="NMClass\NMCOHelpers.h" />
     <ClInclude Include="NMClass\NMCONew.h" />
