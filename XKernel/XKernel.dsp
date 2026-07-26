@@ -434,7 +434,7 @@ LIB32=link.exe -lib
 # PROP Intermediate_Dir "../Compiled/US/release/XKernel"
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_MBCS" /D "_LIB" /YX /FD /c
-# ADD CPP /nologo /MD /W3 /GX /Zi /O2 /I "./" /I ".././" /I "./../XGamebase/Include" /I "./../XGamebase/src/libs/jpeg" /I "./../XGamebase/Include/Template" /I "../HackDetector/HackShield" /I "../HackDetector/GameGuard" /I "../HackDetector/XTrap" /I "../MeshControl" /I "../XParticleCore" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "_ACCLAIM_VERSION" /D "_XENGLISH" /FR /FD /c
+# ADD CPP /nologo /MD /W3 /GX /Zi /O2 /I "./" /I ".././" /I "./../XGamebase/Include" /I "./../XGamebase/src/libs/jpeg" /I "./../XGamebase/Include/Template" /I "../MeshControl" /I "../XParticleCore" /D "NDEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "_ACCLAIM_VERSION" /D "_XENGLISH" /D "_XPLAYER_NO_LEGACY_ANTICHEAT" /FR /FD /c
 # SUBTRACT CPP /YX
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
 # ADD RSC /l 0x409 /d "NDEBUG"

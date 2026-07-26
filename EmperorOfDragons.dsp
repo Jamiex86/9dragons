@@ -535,7 +535,7 @@ LINK32=link.exe
 F90=df.exe
 # ADD BASE CPP /nologo /MD /W3 /GX /Zi /O2 /I "./" /I "./XGamebase/Include" /I "./XGamebase/Include/Template" /I "./XKernel" /I "./XProcess" /I "./DataStructure" /I "./XControl" /I "./Utility" /I "./Network" /I "./MeshControl" /I "./ObjectControl" /I "./PathFinding" /I "./Effect/Particle" /I "./Effect/Script" /I "./Script" /I "./XSound" /I "./Filtering" /I "./XGamebase/src/libs/jpeg" /I "./XSTreeWrapper" /I "./XParticleCore" /I "./XFControl" /I "./HackDetector/HackShield" /I "./HackDetector/GameGuard" /I "./Library" /I "./Library/QHTM" /I "./Library/FMod" /I "./XMADWrapper" /I "./NMClass" /I "./HackDetector/XTrap" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "NOUSE_VORBIS" /D "NOUSE_WMA" /D "_XUSEFMOD" /D "_XNOCHECKMEMORYUSAGE" /D "_XESTABLISHEDSERVER" /D "_NEW_TYPE" /Yu"stdafx.h" /FD /c
 # SUBTRACT BASE CPP /Fr
-# ADD CPP /nologo /MD /W3 /GX /Zi /O2 /I "./" /I "./XGamebase/Include" /I "./XGamebase/Include/Template" /I "./XKernel" /I "./XProcess" /I "./DataStructure" /I "./XControl" /I "./Utility" /I "./Network" /I "./MeshControl" /I "./ObjectControl" /I "./PathFinding" /I "./Effect/Particle" /I "./Effect/Script" /I "./Script" /I "./XSound" /I "./Filtering" /I "./XGamebase/src/libs/jpeg" /I "./XSTreeWrapper" /I "./XParticleCore" /I "./XFControl" /I "./HackDetector/HackShield" /I "./HackDetector/GameGuard" /I "./Library" /I "./Library/QHTM" /I "./Library/FMod" /I "./XMADWrapper" /I "./NMClass" /I "./HackDetector/XTrap" /I "./XIGAADWrapper" /I "./Library/radsdk" /I "./Library/BinkSDK" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "NOUSE_VORBIS" /D "NOUSE_WMA" /D "_XUSEFMOD" /D "_XNOCHECKMEMORYUSAGE" /D "_XESTABLISHEDSERVER" /D "_NEW_TYPE" /D "_ACCLAIM_VERSION" /D "_XENGLISH" /D "_ACCLAIM_RUBICONADSYSTEM" /D "_X_US_EXPANDSERVERLIST" /Fr /Yu"stdafx.h" /FD /c
+# ADD CPP /nologo /MD /W3 /GX /Zi /O2 /I "./" /I "./XGamebase/Include" /I "./XGamebase/Include/Template" /I "./XKernel" /I "./XProcess" /I "./DataStructure" /I "./XControl" /I "./Utility" /I "./Network" /I "./MeshControl" /I "./ObjectControl" /I "./PathFinding" /I "./Effect/Particle" /I "./Effect/Script" /I "./Script" /I "./XSound" /I "./Filtering" /I "./XGamebase/src/libs/jpeg" /I "./XSTreeWrapper" /I "./XParticleCore" /I "./XFControl" /I "./Library" /I "./Library/QHTM" /I "./Library/FMod" /I "./XMADWrapper" /I "./NMClass" /I "./XIGAADWrapper" /I "./Library/radsdk" /I "./Library/BinkSDK" /D "NDEBUG" /D "WIN32" /D "_WINDOWS" /D "_MBCS" /D "NOUSE_VORBIS" /D "NOUSE_WMA" /D "_XUSEFMOD" /D "_XNOCHECKMEMORYUSAGE" /D "_XESTABLISHEDSERVER" /D "_NEW_TYPE" /D "_ACCLAIM_VERSION" /D "_XENGLISH" /D "_ACCLAIM_RUBICONADSYSTEM" /D "_X_US_EXPANDSERVERLIST" /D "_XPLAYERCLIENT" /D "_XPLAYER_NO_LEGACY_ANTICHEAT" /Fr /Yu"stdafx.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x412 /d "NDEBUG"
@@ -546,7 +546,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 ./Library/US/XGamebase.lib ./Library/US/XKernel.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib dxguid.lib d3d9.lib d3dx9dt.lib d3dx9.lib dsound.lib dinput8.lib dxerr9.lib d3dxof.lib ws2_32.lib imagehlp.lib Imm32.lib msacm32.lib SpeedTreeRT.lib ./Library/dbghelp.lib ./Library/US/XFControl.lib ./Library/QHTM/QHTM.lib ./Library/FMod/fmodvc.lib ./Library/CWebPage/XWebPage.lib ./NMClass/nmcogame.lib ./NMClass/nmconew.lib /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"libcmt.lib" /out:"./Game/US/NineDragons.exe" /OPT:REF
 # SUBTRACT BASE LINK32 /pdb:none
-# ADD LINK32 msvcrt.lib libcmt.lib ./Library/US/XGamebase.lib ./Library/US/XKernel.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib dxguid.lib d3d9.lib d3dx9dt.lib d3dx9.lib dsound.lib dinput8.lib dxerr9.lib d3dxof.lib ws2_32.lib imagehlp.lib Imm32.lib msacm32.lib SpeedTreeRT.lib ./Library/dbghelp.lib ./Library/US/XFControl.lib ./Library/QHTM/QHTM.lib ./Library/FMod/fmodvc.lib ./Library/CWebPage/XWebPage.lib ./Library/BinkSDK/binkw32.lib ./Library/radsdk/radsdk6.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"msvcrt.lib libcmt.lib" /out:"./Game/US/NineDragons.exe" /OPT:REF
+# ADD LINK32 msvcrt.lib libcmt.lib ./Library/US/XGamebase.lib ./Library/US/XKernel.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib dxguid.lib d3d9.lib d3dx9dt.lib d3dx9.lib dsound.lib dinput8.lib dxerr9.lib d3dxof.lib ws2_32.lib imagehlp.lib Imm32.lib msacm32.lib SpeedTreeRT.lib ./Library/dbghelp.lib ./Library/US/XFControl.lib ./Library/QHTM/QHTM.lib ./Library/FMod/fmodvc.lib ./Library/CWebPage/XWebPage.lib /nologo /subsystem:windows /machine:I386 /nodefaultlib:"msvcrt.lib libcmt.lib" /out:"./Game/US/NineDragons.exe" /OPT:REF
 # SUBTRACT LINK32 /pdb:none /debug
 
 !ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
@@ -1385,79 +1385,6 @@ SOURCE=.\StdAfx.h
 # Begin Source File
 
 SOURCE=.\EmperorOfDragons.rc
-
-!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
-
-!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
-
-!ENDIF 
-
 # End Source File
 # End Group
 # Begin Group "Global Define"
@@ -1896,6 +1823,81 @@ SOURCE=.\xprocess\XWindow_TutorialIcon.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GM_EventManager.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -1904,6 +1906,81 @@ SOURCE=.\XProcess\XWindow_GM_EventManager.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GM_MonsterManage.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -1912,6 +1989,81 @@ SOURCE=.\XProcess\XWindow_GM_MonsterManage.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GM_SendNoticeMessage.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -1920,6 +2072,81 @@ SOURCE=.\XProcess\XWindow_GM_SendNoticeMessage.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GM_StatusControl.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -1928,6 +2155,81 @@ SOURCE=.\XProcess\XWindow_GM_StatusControl.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GM_UserCoordination.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -1936,6 +2238,81 @@ SOURCE=.\XProcess\XWindow_GM_UserCoordination.h
 # Begin Source File
 
 SOURCE=.\XProcess\XWindow_GMCommand.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
@@ -3575,6 +3952,81 @@ SOURCE=.\Network\XNetwork_UniGroupLobby.cpp
 # Begin Source File
 
 SOURCE=.\Network\XNetwork_XTrap.cpp
+
+!IF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 KR_Test_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 VN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TW_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release"
+
+# PROP Exclude_From_Build 1
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 US_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 CN_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 JP_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 RS_Release_GM"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_Debug"
+
+!ELSEIF  "$(CFG)" == "EmperorOfDragons - Win32 TH_Release_GM"
+
+!ENDIF 
+
 # End Source File
 # Begin Source File
 
